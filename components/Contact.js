@@ -4,7 +4,6 @@ import { Button, Label } from 'reactstrap';
 import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
 import styles from './Contact.module.scss';
 import { Tween } from "react-gsap";
-// import { Link } from "react-scroll";
 
 class ContactForm extends Component {
   state = {

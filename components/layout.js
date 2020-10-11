@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function Layout({ children, home, title }) {
   return (
-    <div className={'container'}>
+    <div className={styles.content}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
@@ -23,31 +23,13 @@ export default function Layout({ children, home, title }) {
       </Head>
       <header className={styles.header}>
         {home ? (
-          <>
-            <img
-              src="/images/profile.jpg"
-              className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-              alt={title}
-            />
-            <h1 className={utilStyles.heading2Xl}>{title}</h1>
-          </>
+          <h1 className={utilStyles.heading2Xl}>{title}</h1>
         ) : (
-          <>
+          <h1 className={utilStyles.headingLg}>
             <Link href="/">
-              <a>
-                <img
-                  src="/images/profile.jpg"
-                  className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                  alt={title}
-                />
-              </a>
+              <a className={utilStyles.colorInherit}>{title}</a>
             </Link>
-            <h2 className={utilStyles.headingLg}>
-              <Link href="/">
-                <a className={utilStyles.colorInherit}>{title}</a>
-              </Link>
-            </h2>
-          </>
+          </h1>
         )}
       </header>
       <main>{children}</main>
