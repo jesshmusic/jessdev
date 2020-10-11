@@ -3,6 +3,11 @@
 .content {
   @extend .container-fluid;
 
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 50vh;
+  overflow: visible;
+
   main {
     @extend .container;
   }
