@@ -17,7 +17,7 @@ $c-tan: #CDB48D;
 $c-red: #814646;
 $c-light: #e2dede;
 
-$white: lighten($c-dark, 85%);
+$white: #fff;
 $gray-100: lighten($c-dark, 80%);
 $gray-200: lighten($c-dark, 75%);
 $gray-300: lighten($c-dark, 65%);
@@ -59,8 +59,8 @@ $enable-grid-classes: true;
 
 $body-bg: $gray-100;
 $body-color: $c-dark;
-$link-color: lighten($c-blue, 40%);
-$link-hover-color: lighten($link-color, 20%);
+$link-color: $body-color;
+$link-hover-color: lighten($body-color, 20%);
 $link-hover-decoration: none;
 
 // Spacing
@@ -89,11 +89,17 @@ $font-family-sans-serif: 'Jura', -apple-system, BlinkMacSystemFont, "Segoe UI", 
 $font-family-sans: 'Jura', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 $font-family-base: $font-family-sans;
 $font-size-base: 1rem;
+$font-weight-light: 300;
+$font-weight-base: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 600;
+$font-weight-bolder: 700;
 
 $headings-margin-bottom: $spacer * 2;
 $headings-font-weight: 300;
 
 $font-size-xs: .65rem;
+$font-size-xl: $font-size-base * 1.5;
 
 $line-height-lg: 1.8;
 
@@ -102,5 +108,6 @@ $small-font-size: 40%;
 $box-shadow: 0 1rem 2rem rgba($black, .35);
 
 $border-radius-xl: $spacer * 4;
+$border-radius-lg: $spacer * .5;
 
 $enable-responsive-font-sizes: true;
