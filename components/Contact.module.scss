@@ -1,0 +1,56 @@
+@import "../styles/bootstrap/functions";
+@import "../styles/bootstrap/variables";
+
+@import "../styles/variables";
+
+@import "../styles/bootstrap/mixins";
+
+@import "../styles/bootstrap/grid";
+@import "../styles/bootstrap/utilities";
+
+.contactForm {
+  @extend .container;
+  @extend .pb-4;
+  @extend .pt-5;
+
+  h3 {
+    @extend .mb-2;
+  }
+
+  input,
+  textarea {
+    @extend .text-primary;
+  }
+}
+
+.topLink {
+  @extend .mt-4;
+  @extend .py-2;
+
+  text-align: center;
+
+  a {
+    @extend .px-3;
+    @extend .py-2;
+    @include font-size($font-size-xs);
+
+    background: rgba($black, 0);
+    border: solid 1px $white;
+    border-radius: 0;
+    cursor: pointer;
+    letter-spacing: .1rem;
+    line-height: 1;
+    text-transform: uppercase;
+    transition: background 350ms ease-in-out, color 350ms, ease-in-out;
+
+    &:hover {
+      background: rgba($black, 0.5);
+    }
+  }
+}
+
+.contactFormContainer {
+  @extend .col-12;
+  @extend .col-md-8;
+  @extend .offset-md-2;
+}
