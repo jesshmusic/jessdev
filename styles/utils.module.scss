@@ -3,11 +3,22 @@
 .section {
   @extend .mb-3;
   @extend .mb-md-5;
+  @extend .row;
+
+  h2 {
+    @extend .col-12;
+  }
+}
+
+.text {
+  @extend .col;
 }
 
 .cardGrid {
+  @extend .col;
+
   display: grid;
   grid-gap: $spacer * 2.5;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  grid-auto-rows: minmax(20vh, 30vh);
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-auto-rows: minmax(1fr, 30vh);
 }

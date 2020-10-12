@@ -104,7 +104,7 @@ export default function Home({ homeData }) {
         <title>{siteTitle}</title>
       </Head>
       <section className={styles.section}>
-        <ReactMarkdown source={homeData.description} />
+        <ReactMarkdown source={homeData.description} className={styles.text} />
       </section>
       {homeData.Client && homeData.Client.length > 0 ? (
         <section className={styles.section} id={'clientSection'}>

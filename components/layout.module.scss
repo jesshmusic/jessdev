@@ -1,17 +1,16 @@
 @import "../styles/base";
 
 .content {
-  @extend .container-fluid;
-  @extend .px-0;
-
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: 50vh;
   overflow: visible;
+  width: 100%;
 
-  main {
-    @extend .container;
-  }
+
+}
+.mainContent {
+  @extend .container;
 }
 
 .header {
