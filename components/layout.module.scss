@@ -2,6 +2,7 @@
 
 .content {
   @extend .container-fluid;
+  @extend .px-0;
 
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -17,6 +18,8 @@
   @extend .p-3;
   @extend .p-md-4;
   @extend .p-lg-5;
+
+  position: relative;
 
   h1 {
     @include font-size($h1-font-size);

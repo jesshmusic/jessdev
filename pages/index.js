@@ -2,7 +2,7 @@ import Head from 'next/head'
 import { useEffect } from "react";
 import Layout from '../components/layout'
 import styles from '../styles/utils.module.scss'
-import { getHomeData, getSortedPostsData } from "../lib/posts";
+import { getHomeData } from "../lib/posts";
 import ReactMarkdown from "react-markdown";
 import ContactForm from "../components/Contact";
 import ClientTease from "../components/ClientTease";
@@ -75,26 +75,26 @@ export default function Home({ homeData }) {
 
   useEffect(() => {
     gsap.from(".client-card",{
-      y:100,
-      scale:2,
-      opacity:0,
+      scale: 0.75,
+      opacity: 0,
       stagger:distributeByPosition({
-        amount:1.5
-      })
+        amount: 0.75
+      }),
+      ease: 'power1.in',
     });
     gsap.from(".tech-card",{
       scrollTrigger: {
         trigger: "#clientSection",
-        start: "bottom center",
+        start: "center center",
         end: "top bottom",
-        id: "tech"
+        id: "tech",
       },
-      y:100,
-      scale:2,
-      opacity:0,
+      scale: 0.75,
+      opacity: 0,
       stagger:distributeByPosition({
-        amount:1.5
-      })
+        amount: .75
+      }),
+      ease: 'power1.out',
     });
   })
 
