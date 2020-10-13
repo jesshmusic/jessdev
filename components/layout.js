@@ -2,43 +2,14 @@ import Head from 'next/head';
 import styles from './layout.module.scss';
 import utilStyles from '../styles/utils.module.scss';
 import Link from 'next/link';
-import { gsap } from "gsap";
-import { SplitText } from "gsap/dist/SplitText";
 import { useEffect } from "react";
 import Logo from "./Logo";
-
-gsap.registerPlugin(SplitText);
+import { titleAnimateIn } from "../lib/animations";
 
 export default function Layout({ children, home, title }) {
   useEffect(() => {
-    const splitText = new SplitText('#siteHeadingText', {type:'chars'});
-    const headingTimeline = gsap.timeline();
-    gsap.set('#siteHeadingText', {perspective: 400})
-
-    headingTimeline.from(splitText.chars, {
-      duration: 1,
-      x: '-400px',
-      autoAlpha: 0,
-      transformOrigin: '100% 50%',
-      ease: 'back.out',
-      stagger: 0.1
-    })
+    titleAnimateIn('#siteHeadingText');
   });
-
-  const onHover = () => {
-    const splitText = new SplitText('#siteHeadingText', {type:'chars'});
-    const headingTimeline = gsap.timeline();
-    gsap.set('#siteHeadingText', {perspective: 400})
-    headingTimeline.from(splitText.chars, {
-      duration: 2,
-      autoAlpha: 0,
-      x: 'random(-100, 100, 5)',
-      y: 'random(-100, 100, 5)',
-      transformOrigin: '100% 50%',
-      ease: 'power1.out',
-      stagger: 0.01
-    })
-  }
 
   return (
     <div className={styles.content}>
@@ -62,7 +33,6 @@ export default function Layout({ children, home, title }) {
       <header className={styles.header}>
         {home ? (
           <h1 className={utilStyles.heading2Xl}
-              onMouseEnter={onHover}
               id={'siteHeadingText'}>
             {title}
           </h1>
@@ -70,7 +40,6 @@ export default function Layout({ children, home, title }) {
           <h1 className={utilStyles.headingLg}>
             <Link href="/">
               <a className={utilStyles.colorInherit}
-                 onMouseEnter={onHover}
                  id={'siteHeadingText'}>
                 {title}
               </a>
