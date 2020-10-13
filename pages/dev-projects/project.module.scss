@@ -1,0 +1,30 @@
+@import "../../styles/base";
+
+.contentRow {
+  @extend .mb-5;
+}
+
+.contentSection {
+  @extend .mb-5;
+}
+
+.gallery {
+  @extend .mb-5;
+}
+
+.githubLink {
+  align-self: center;
+  color: $primary-dark;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  transition: color 250ms ease-in-out;
+
+  &:hover {
+    color: $secondary;
+  }
+}
+
+.linkRow {
+  display: flex;
+  justify-content: center;
+}

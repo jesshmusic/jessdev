@@ -27,35 +27,35 @@ export default function Layout({ children, home, title }) {
           property="og:image"
           content={`/images/logo.svg`}
         />
-        <meta name="og:title" content={title} />
+        <meta name="og:title" content={`Jess Hendricks | ${title}`} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <header className={styles.header}>
         {home ? (
-          <h1 className={utilStyles.heading2Xl}
-              id={'siteHeadingText'}>
-            {title}
+          <h1 id={'siteHeadingText'}>
+            Jess Hendricks <small>Software Engineer | Web Developer</small>
           </h1>
         ) : (
-          <h1 className={utilStyles.headingLg}>
+          <h1>
             <Link href="/">
-              <a className={utilStyles.colorInherit}
-                 id={'siteHeadingText'}>
-                {title}
+              <a id={'siteHeadingText'}>
+                Jess Hendricks <small>Software Engineer | Web Developer</small>
               </a>
             </Link>
           </h1>
         )}
         <Logo />
       </header>
-      <main className={styles.mainContent}>{children}</main>
-      {!home && (
-        <div className={styles.backToHome}>
-          <Link href="/">
-            <a>← Back to home</a>
-          </Link>
-        </div>
-      )}
+      <main className={styles.mainContent}>
+        {children}
+        {!home && (
+          <div className={styles.backToHome}>
+            <Link href="/">
+              <a>← Back to home</a>
+            </Link>
+          </div>
+        )}
+      </main>
     </div>
   )
 }

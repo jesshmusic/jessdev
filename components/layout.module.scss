@@ -11,6 +11,7 @@
 }
 .mainContent {
   @extend .container;
+  @extend .pb-6;
 }
 
 .header {
@@ -37,4 +38,15 @@
 
 .backToHome {
   margin: 3rem 0 0;
+
+  a {
+    color: $primary-dark;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-bold;
+    transition: color 250ms ease-in-out;
+
+    &:hover {
+      color: $secondary;
+    }
+  }
 }

@@ -8,6 +8,7 @@ import ContactForm from "../components/Contact";
 import ClientTease from "../components/ClientTease";
 import TechTease from "../components/TechTease";
 import { distributeCards, distributeCardsOnScroll } from "../lib/animations";
+import ProjectTease from "../components/ProjectTease";
 
 export default function Home({ homeData }) {
   const siteTitle = homeData.Title;
@@ -25,6 +26,16 @@ export default function Home({ homeData }) {
       <section className={styles.section}>
         <ReactMarkdown source={homeData.description} className={styles.text} />
       </section>
+      {homeData.dev_projects && homeData.dev_projects.length > 0 ? (
+        <section className={styles.section} id={'projectSection'}>
+          <h2>Projects</h2>
+          <div className={styles.cardGrid}>
+            {homeData.dev_projects.map((props) => (
+              <ProjectTease {...props} key={props.id} scrollTrigger={'#projectSection'} />
+            ))}
+          </div>
+        </section>
+      ) : null}
       {homeData.Client && homeData.Client.length > 0 ? (
         <section className={styles.section} id={'clientSection'}>
           <h2>Clients</h2>
