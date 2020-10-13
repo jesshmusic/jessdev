@@ -1,5 +1,4 @@
 import CardComponent from "./CardComponent";
-import { excerpt } from "../lib/utilities";
 
 const ProjectTease = ( { title, excerpt, thumbnail, slug }) => {
   return (

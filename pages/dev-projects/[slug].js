@@ -8,7 +8,7 @@ import Row from "reactstrap/lib/Row";
 import Col from "reactstrap/lib/Col";
 
 export default function Post({ postData }) {
-  console.log(postData)
+
   return (
     <Layout>
       <Head>
