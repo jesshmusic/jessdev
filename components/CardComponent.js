@@ -32,7 +32,7 @@ const CardComponent = (props) => {
 CardComponent.propTypes = {
   title: PropTypes.string.isRequired,
   isInternalLink: PropTypes.bool,
-  siteLink: PropTypes.string.isRequired,
+  siteLink: PropTypes.string,
   className: PropTypes.string.isRequired
 }
 

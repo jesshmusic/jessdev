@@ -40,13 +40,13 @@
   background: $white;
   border: solid 0.25rem $primary;
   border-bottom-right-radius: $border-radius-lg;
+  bottom: 0;
   height: 0;
   margin-left: -6rem;
   opacity: 0;
   overflow: hidden;
   padding: bsize(3) 2rem bsize(3) 6rem;
   position: absolute;
-  bottom: 0rem;
   z-index: 1;
 }
 
