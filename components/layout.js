@@ -1,15 +1,15 @@
-import Head from 'next/head';
-import styles from './layout.module.scss';
-import utilStyles from '../styles/utils.module.scss';
-import Link from 'next/link';
-import { useEffect } from "react";
-import Logo from "./Logo";
-import { titleAnimateIn } from "../lib/animations";
+import Head from 'next/head'
+import styles from './layout.module.scss'
+import Link from 'next/link'
+import { useEffect } from 'react'
+import Logo from './Logo'
+import { titleAnimateIn } from '../lib/animations'
+import { PropTypes } from 'prop-types'
 
-export default function Layout({ children, home, title }) {
+export default function Layout ({ children, home, title }) {
   useEffect(() => {
-    titleAnimateIn('#siteHeadingText');
-  });
+    titleAnimateIn('#siteHeadingText')
+  })
 
   return (
     <div className={styles.content}>
@@ -25,7 +25,7 @@ export default function Layout({ children, home, title }) {
         />
         <meta
           property="og:image"
-          content={`/images/logo.svg`}
+          content={'/images/logo.svg'}
         />
         <meta name="og:title" content={`Jess Hendricks | ${title}`} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -46,7 +46,7 @@ export default function Layout({ children, home, title }) {
         )}
         <Logo />
       </header>
-      <main className={styles.mainContent}>
+      <main className={`${styles.mainContent} container-xl`}>
         {children}
         {!home && (
           <div className={styles.backToHome}>
@@ -58,4 +58,10 @@ export default function Layout({ children, home, title }) {
       </main>
     </div>
   )
+}
+
+Layout.propTypes = {
+  children: PropTypes.array,
+  home: PropTypes.object,
+  title: PropTypes.string
 }

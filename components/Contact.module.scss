@@ -4,6 +4,9 @@
   @include pb(4);
   @include pb(5);
   @include make-row;
+  @include media-breakpoint-down(xl) {
+    @include mx(0);
+  }
 
   h3 {
     @include mb(2);
