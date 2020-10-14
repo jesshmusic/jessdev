@@ -1,4 +1,4 @@
-@import "../styles/base";
+@import '../styles/base';
 
 .content {
   background-attachment: fixed;
@@ -6,20 +6,24 @@
   background-size: 50vh;
   overflow: visible;
   width: 100%;
-
-
 }
+
 .mainContent {
-  @extend .container;
-  @extend .pb-6;
+  @include make-container;
+  @include make-container-max-widths;
+  @include pb(6);
 }
 
 .header {
-  @extend .p-3;
-  @extend .p-md-4;
-  @extend .p-lg-5;
+  @include p(3);
 
   position: relative;
+  @include media-breakpoint-up(md) {
+    @include p(4);
+  }
+  @include media-breakpoint-up(lg) {
+    @include p(5);
+  }
 
   h1 {
     @include font-size($h1-font-size);
@@ -27,13 +31,13 @@
 }
 
 .headerImage {
-  width: 6rem;
   height: 6rem;
+  width: 6rem;
 }
 
 .headerHomeImage {
-  width: 8rem;
   height: 8rem;
+  width: 8rem;
 }
 
 .backToHome {

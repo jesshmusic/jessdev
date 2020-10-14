@@ -1,22 +1,24 @@
-@import "../styles/base";
+@import '../styles/base';
 
 .contactForm {
-  @extend .pb-4;
-  @extend .pt-5;
-  @extend .row;
+  @include pb(4);
+  @include pb(5);
+  @include make-row;
 
   h3 {
-    @extend .mb-2;
+    @include mb(2);
   }
 
   input,
   textarea {
-    @extend .text-primary;
+    color: $primary;
   }
 }
 
 .contactFormContainer {
-  @extend .col;
-  @extend .col-md-8;
-  @extend .offset-md-2;
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(8);
+    @include make-col-offset(2);
+  }
 }

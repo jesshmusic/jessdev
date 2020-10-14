@@ -1,24 +1,26 @@
-@import "../styles/base";
+@import '../styles/base';
 
 .section {
-  @extend .mb-3;
-  @extend .mb-md-5;
-  @extend .row;
+  @include make-row;
+  @include mb(3);
+  @include media-breakpoint-up(md) {
+    @include mb(5);
+  }
 
   h2 {
-    @extend .col-12;
+    @include make-col(12);
   }
 }
 
 .text {
-  @extend .col;
+  @include make-col(12);
 }
 
 .cardGrid {
-  @extend .col;
+  @include make-col(12);
 
   display: grid;
+  grid-auto-rows: minmax(1fr, 30vh);
   grid-gap: $spacer * 2.5;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  grid-auto-rows: minmax(1fr, 30vh);
 }

@@ -1,72 +1,34 @@
-import styles from "./Card.module.scss";
-import ReactMarkdown from "react-markdown";
-import { camelize } from "../lib/utilities";
-import { hoverEffectIn, hoverEffectOut } from "../lib/animations";
-import Link from 'next/link'
-
-const CardContent = ( { title, description, image, subtitle, cardID } ) => (
-  <>
-    <div className={ styles.header }>
-      <h3 className={ styles.title }>{ title }</h3>
-      { subtitle ? <h4 className={ styles.subtitle }>{ subtitle }</h4> : null }
-    </div>
-    <div className={ styles.image } style={ { backgroundImage: `url("${ image.url }")` } }/>
-    <div className={ styles.content } id={`${cardID}-content`}>
-      <ReactMarkdown source={ description }/>
-    </div>
-  </>
-)
-
-const InternalLinkCard = ({children, cardID, siteLink, cardTarget, className}) => (
-  <Link href={siteLink}>
-    <a className={ `${ styles.card } ${ className }` }
-       id={cardID}
-       onMouseEnter={() => hoverEffectIn(cardTarget)}
-       onMouseLeave={() => hoverEffectOut(cardTarget)}>
-      { children }
-    </a>
-  </Link>
-)
-
-const ExternalLinkCard = ({children, cardID, siteLink, cardTarget, className}) => (
-  <a className={ `${ styles.card } ${ className }` }
-     id={cardID}
-     href={ siteLink }
-     rel={ 'noreferrer noopener' }
-     onMouseEnter={() => hoverEffectIn(cardTarget)}
-     onMouseLeave={() => hoverEffectOut(cardTarget)}
-     target={ '_blank' }>
-    { children }
-  </a>
-)
-
-const DefaultCard = ({children, cardID, cardTarget, className}) => (
-  <div className={ `${ styles.card } ${ className }` }
-       id={cardID}
-       onMouseEnter={() => hoverEffectIn(cardTarget)}
-       onMouseLeave={() => hoverEffectOut(cardTarget)}>
-    { children }
-  </div>
-)
+import { PropTypes } from 'prop-types'
+import { camelize } from '../lib/utilities'
+import CardContent from './cards/CardContent'
+import ExternalLinkCard from './cards/ExternalLinkCard'
+import DefaultCard from './cards/DefaultCard'
+import InternalLinkCard from './cards/InternalLinkCard'
 
 const CardComponent = (props) => {
-  const cardID = `card-${camelize(props.title)}`;
-  const cardTarget = `#${cardID}`;
+  const cardID = `card-${camelize(props.title)}`
+  const cardTarget = `#${cardID}`
 
-  if ( props.isInternalLink ) {
+  if (props.isInternalLink) {
     return (
       <InternalLinkCard siteLink={props.siteLink} cardID={cardID} cardTarget={cardTarget} className={props.className}>
         <CardContent {...props} />
       </InternalLinkCard>
-    );
-  } else if ( props.siteLink ) {
+    )
+  } else if (props.siteLink) {
     return (
       <ExternalLinkCard siteLink={props.siteLink} cardID={cardID} cardTarget={cardTarget} className={props.className}>
         <CardContent{...props} />
       </ExternalLinkCard>
-    );
+    )
   }
-  return <DefaultCard cardID={cardID} cardTarget={cardTarget} className={props.className}><CardContent{...props} /></DefaultCard>;
+  return <DefaultCard cardID={cardID} cardTarget={cardTarget} className={props.className}><CardContent{...props} /></DefaultCard>
+}
+CardComponent.propTypes = {
+  title: PropTypes.string.isRequired,
+  isInternalLink: PropTypes.bool,
+  siteLink: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired
 }
 
-export default CardComponent;
+export default CardComponent

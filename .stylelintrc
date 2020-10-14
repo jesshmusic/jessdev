@@ -1,0 +1,10 @@
+{
+  "extends": "stylelint-config-sass-guidelines",
+  "rules": {
+    "indentation": 2,
+    "string-quotes": "single",
+    "scss/at-extend-no-missing-placeholder": null,
+    "max-nesting-depth": 3,
+    "selector-class-pattern": ["^([a-z][a-z0-9]*)(-[a-z0-9]+)*$", "^[a-z][a-zA-Z0-9]+$"]
+  }
+}

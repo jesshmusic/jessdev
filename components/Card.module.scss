@@ -1,4 +1,4 @@
-@import "../styles/base";
+@import '../styles/base';
 
 .card {
   background: $white;
@@ -10,21 +10,22 @@
 }
 
 .header {
-  @extend .py-3;
-  @extend .px-4;
+  @include py(3);
+  @include px(4);
 
   background-color: lighten($primary, 25%);
   border-bottom: solid 1rem $primary;
   height: 8rem;
   overflow: hidden;
 
-  h3, h4 {
+  h3,
+  h4 {
     margin: 0;
   }
 }
 
 .content {
-  @extend .px-4;
+  @include py(4);
 
   padding-top: 7.5rem;
 }
@@ -40,13 +41,14 @@
 }
 
 .image {
-  width: 10rem;
-  height: 10rem;
-  margin: -6rem auto -6rem;
-  background-size: contain;
   background-color: $white;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: contain;
+  border: solid 0.5rem $primary;
   border-radius: 100%;
-  border: solid .5rem $primary;
+  height: 10rem;
+  position: absolute;
+  //margin: -6rem auto;
+  width: 10rem;
 }

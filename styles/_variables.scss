@@ -7,13 +7,13 @@
 
 // Color system
 
-$c-dark: #1A1511;
-$c-brown: #6F5D4C;
+$c-dark: #1a1511;
+$c-brown: #6f5d4c;
 $c-blue: #6e8d92;
-$c-green: #819F99;
+$c-green: #819f99;
 $c-green-dark: darken($c-green, 20%);
 $c-indigo: #524662;
-$c-tan: #CDB48D;
+$c-tan: #cdb48d;
 $c-red: #814646;
 $c-light: #e2dede;
 
@@ -27,33 +27,31 @@ $gray-600: lighten($c-dark, 35%);
 $gray-700: lighten($c-dark, 25%);
 $gray-800: lighten($c-dark, 15%);
 $gray-900: $c-dark;
-$black:    #000;
+$black: #000;
 
-$primary:       $c-blue;
-$primary-dark:  darken($primary, 10%);
-$secondary:     $c-brown;
-$success:       $c-green;
-$info:          $c-indigo;
-$warning:       $c-tan;
-$danger:        $c-red;
-$light:         $c-light;
-$dark:          $c-dark;
+$primary: $c-blue;
+$primary-dark: darken($primary, 10%);
+$secondary: $c-brown;
+$success: $c-green;
+$info: $c-indigo;
+$warning: $c-tan;
+$danger: $c-red;
+$light: $c-light;
+$dark: $c-dark;
 
 $theme-colors: ();
-$theme-colors: map-merge(
-  (
-    "primary":    $primary,
-    "primary-dark":    $primary-dark,
-    "secondary":  $secondary,
-    "success":    $success,
-    "info":       $info,
-    "warning":    $warning,
-    "danger":     $danger,
-    "light":      $light,
-    "dark":       $dark
-  ),
-  $theme-colors
-);
+$theme-colors: map-merge((
+  'primary':    $primary,
+  'primary-dark':    $primary-dark,
+  'secondary':  $secondary,
+  'success':    $success,
+  'info':       $info,
+  'warning':    $warning,
+  'danger':     $danger,
+  'light':      $light,
+  'dark':       $dark
+),
+$theme-colors);
 
 $enable-grid-classes: true;
 
@@ -67,26 +65,24 @@ $link-hover-decoration: none;
 
 $spacer: 1.5rem;
 $spacers: ();
-$spacers: map-merge(
-  (
-    0: 0,
-    1: ($spacer * .25),
-    2: ($spacer * .5),
-    3: $spacer,
-    4: ($spacer * 1.5),
-    5: ($spacer * 3),
-    6: ($spacer * 5)
-  ),
-  $spacers
-);
+$spacers: map-merge((
+  0: 0,
+  1: ($spacer * 0.25),
+  2: ($spacer * 0.5),
+  3: $spacer,
+  4: ($spacer * 1.5),
+  5: ($spacer * 3),
+  6: ($spacer * 5)
+),
+$spacers);
 
 // Fonts
 
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
 
 
-$font-family-sans-serif: 'Jura', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-sans: 'Jura', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-family-sans-serif: 'Jura', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$font-family-sans: 'Jura', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $font-family-base: $font-family-sans;
 $font-size-base: 1rem;
 $font-weight-light: 300;
@@ -98,16 +94,16 @@ $font-weight-bolder: 700;
 $headings-margin-bottom: $spacer * 2;
 $headings-font-weight: 300;
 
-$font-size-xs: .65rem;
+$font-size-xs: 0.65rem;
 $font-size-xl: $font-size-base * 1.5;
 
 $line-height-lg: 1.8;
 
 $small-font-size: 40%;
 
-$box-shadow: 0 1rem 2rem rgba($black, .35);
+$box-shadow: 0 1rem 2rem rgba($black, 0.35);
 
 $border-radius-xl: $spacer * 4;
-$border-radius-lg: $spacer * .5;
+$border-radius-lg: $spacer * 0.5;
 
 $enable-responsive-font-sizes: true;
