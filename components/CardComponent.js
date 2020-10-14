@@ -7,22 +7,27 @@ import InternalLinkCard from './cards/InternalLinkCard'
 
 const CardComponent = (props) => {
   const cardID = `card-${camelize(props.title)}`
-  const cardTarget = `#${cardID}`
+  const cardContentID = `card-${camelize(props.title)}-content`
+  const cardTarget = `#${cardID}-content`
 
   if (props.isInternalLink) {
     return (
       <InternalLinkCard siteLink={props.siteLink} cardID={cardID} cardTarget={cardTarget} className={props.className}>
-        <CardContent {...props} />
+        <CardContent {...props} cardContentID={cardContentID}/>
       </InternalLinkCard>
     )
   } else if (props.siteLink) {
     return (
       <ExternalLinkCard siteLink={props.siteLink} cardID={cardID} cardTarget={cardTarget} className={props.className}>
-        <CardContent{...props} />
+        <CardContent{...props} cardContentID={cardContentID} />
       </ExternalLinkCard>
     )
   }
-  return <DefaultCard cardID={cardID} cardTarget={cardTarget} className={props.className}><CardContent{...props} /></DefaultCard>
+  return (
+    <DefaultCard cardID={cardID} cardTarget={cardTarget} className={props.className}>
+      <CardContent{...props} cardContentID={cardContentID} />
+    </DefaultCard>
+  )
 }
 CardComponent.propTypes = {
   title: PropTypes.string.isRequired,

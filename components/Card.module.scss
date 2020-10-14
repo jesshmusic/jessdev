@@ -1,22 +1,34 @@
 @import '../styles/base';
 
 .card {
-  background: $white;
-  box-shadow: 0 0 1rem 0 rgba($primary-dark, 0.5);
+  min-height: 11rem;
   opacity: 0.75;
-  overflow: visible;
+  overflow: hidden;
   transform: scale(1);
   z-index: 1;
 }
 
-.header {
-  @include py(3);
-  @include px(4);
+.cardContent {
+  position: relative;
+}
 
+.header {
   background-color: lighten($primary, 25%);
-  border-bottom: solid 1rem $primary;
-  height: 8rem;
+  border: solid 0.25rem $primary;
+  border-bottom-right-radius: $border-radius-lg;
+
+  height: 5rem;
+  margin-left: 6rem;
+  margin-top: 1.5rem;
   overflow: hidden;
+  padding: bsize(3) 2rem bsize(3) 6rem;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
 
   h3,
   h4 {
@@ -25,9 +37,17 @@
 }
 
 .content {
-  @include py(4);
-
-  padding-top: 7.5rem;
+  background: $white;
+  border: solid 0.25rem $primary;
+  border-bottom-right-radius: $border-radius-lg;
+  height: 0;
+  margin-left: -6rem;
+  opacity: 0;
+  overflow: hidden;
+  padding: bsize(3) 2rem bsize(3) 6rem;
+  position: absolute;
+  bottom: 0rem;
+  z-index: 1;
 }
 
 .subtitle {
@@ -48,7 +68,8 @@
   border: solid 0.5rem $primary;
   border-radius: 100%;
   height: 10rem;
+  margin: -1.5rem auto;
   position: absolute;
-  //margin: -6rem auto;
   width: 10rem;
+  z-index: 2;
 }

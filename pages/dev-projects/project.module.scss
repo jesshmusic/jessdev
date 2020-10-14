@@ -1,15 +1,9 @@
-@import "../../styles/base";
+@import '../../styles/base';
 
-.contentRow {
-  @extend .mb-5;
-}
-
-.contentSection {
-  @extend .mb-5;
-}
-
+.contentRow,
+.contentSection,
 .gallery {
-  @extend .mb-5;
+  @include mb(5);
 }
 
 .githubLink {

@@ -1,21 +1,23 @@
 import Head from 'next/head'
-import { useEffect } from "react";
+import { useEffect } from 'react'
 import Layout from '../components/layout'
 import styles from '../styles/utils.module.scss'
-import { getHomeData } from "../lib/posts";
-import ReactMarkdown from "react-markdown";
-import ContactForm from "../components/Contact";
-import ClientTease from "../components/ClientTease";
-import TechTease from "../components/TechTease";
-import { distributeCards, distributeCardsOnScroll } from "../lib/animations";
-import ProjectTease from "../components/ProjectTease";
+import { getHomeData } from '../lib/posts'
+import ReactMarkdown from 'react-markdown'
+import ContactForm from '../components/Contact'
+import ClientTease from '../components/ClientTease'
+import TechTease from '../components/TechTease'
+import { distributeCards, distributeCardsOnScroll } from '../lib/animations'
+import ProjectTease from '../components/ProjectTease'
+import { PropTypes } from 'prop-types'
 
-export default function Home({ homeData }) {
-  const siteTitle = homeData.Title;
+export default function Home ({ homeData }) {
+  const siteTitle = homeData.Title
 
   useEffect(() => {
-    distributeCards(".client-card");
-    distributeCardsOnScroll(".tech-card", '#clientSection');
+    distributeCards('.project-card')
+    distributeCards('.client-card')
+    distributeCardsOnScroll('.tech-card', '#clientSection')
   })
 
   return (
@@ -31,7 +33,8 @@ export default function Home({ homeData }) {
           <h2>Projects</h2>
           <div className={styles.cardGrid}>
             {homeData.dev_projects.map((props) => (
-              <ProjectTease {...props} key={props.id} scrollTrigger={'#projectSection'} />
+              // eslint-disable-next-line react/prop-types
+              <ProjectTease {...props} key={props.slug} scrollTrigger={'#projectSection'} />
             ))}
           </div>
         </section>
@@ -41,6 +44,7 @@ export default function Home({ homeData }) {
           <h2>Clients</h2>
           <div className={styles.cardGrid}>
             {homeData.Client.map((props) => (
+              // eslint-disable-next-line react/prop-types
               <ClientTease { ...props } key={props.id} scrollTrigger={'#clientSection'} />
             ))}
           </div>
@@ -51,6 +55,7 @@ export default function Home({ homeData }) {
           <h2>Technology</h2>
           <div className={styles.cardGrid}>
             {homeData.Technology.map((props) => (
+              // eslint-disable-next-line react/prop-types
               <TechTease {...props} key={props.id} scrollTrigger={'#techSection'} />
             ))}
           </div>
@@ -60,12 +65,21 @@ export default function Home({ homeData }) {
     </Layout>
   )
 }
+Home.propTypes = {
+  homeData: PropTypes.shape({
+    Client: PropTypes.array,
+    description: PropTypes.string.isRequired,
+    dev_projects: PropTypes.array,
+    Technology: PropTypes.array,
+    Title: PropTypes.string.isRequired
+  })
+}
 
-export async function getStaticProps() {
+export async function getStaticProps () {
   const homeData = await getHomeData()
   return {
     props: {
-      homeData: homeData,
+      homeData: homeData
     }
   }
 }
