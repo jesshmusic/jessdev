@@ -1,9 +1,34 @@
 @import '../../styles/base';
 
-.contentRow,
-.contentSection,
+.pageTitle {
+  @include section-header;
+  @include mt(0);
+}
+
+.contentRow {
+  @include section-row;
+
+  max-width: 80rem;
+}
+
+.content {
+  @include font-size($font-size-lg);
+  @include mb(6);
+
+  flex: 2;
+
+  @include media-breakpoint-up(md) {
+    @include mb(0);
+    @include pr(6);
+  }
+}
+
 .gallery {
-  @include mb(5);
+  @include mb(3);
+
+  h2 {
+    @include section-header;
+  }
 }
 
 .githubLink {
@@ -19,6 +44,33 @@
 }
 
 .linkRow {
+  @include section-container;
+  @include mt(6);
+
   display: flex;
   justify-content: center;
+
+  a {
+    @include px(4);
+    @include py(2);
+
+    background-color: $warning;
+    border: solid $info 0.25rem;
+    border-radius: $border-radius-lg;
+    color: $secondary;
+    font-size: $h3-font-size;
+    transition: background-color 250ms ease-in-out;
+
+    &:hover {
+      background-color: lighten($warning, 20%);
+    }
+  }
+}
+
+.thumbnail {
+  flex: 1;
+
+  img {
+    @include img-fluid;
+  }
 }

@@ -1,28 +1,33 @@
-import React, { Component } from 'react';
-import * as emailjs from 'emailjs-com';
-import { Button, Label } from 'reactstrap';
-import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation';
-import styles from './Contact.module.scss';
-import { Tween } from "react-gsap";
+import React, { Component } from 'react'
+import * as emailjs from 'emailjs-com'
+import { Button, Label } from 'reactstrap'
+import { AvForm, AvGroup, AvInput, AvFeedback } from 'availity-reactstrap-validation'
+import styles from './Contact.module.scss'
+import { Tween } from 'react-gsap'
 
 class ContactForm extends Component {
-  state = {
-    sent: false,
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-    errorMessage: null,
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      sent: false,
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+      errorMessage: null
+    }
   }
-  handleSubmit(e) {
+
+  handleSubmit (e) {
     e.preventDefault()
     const { name, email, subject, message } = this.state
-    let templateParams = {
+    const templateParams = {
       from_name: name,
       from_email: email,
       to_name: '<YOUR_EMAIL_ID>',
       subject: subject,
-      message: message,
+      message: message
     }
     emailjs.send(
       'Web Dev Portfolio',
@@ -31,28 +36,30 @@ class ContactForm extends Component {
       'user_a9AZgmEP5clP4eqlkWOLo'
     )
       .then(response => {
-        this.setState({sent: true});
+        this.setState({ sent: true })
       }, error => {
-        this.setState({sent: false, errorMessage: error});
-      });
+        this.setState({ sent: false, errorMessage: error })
+      })
   }
-  resetForm() {
+
+  resetForm () {
     if (!this.state.sent && !this.state.errorMessage) {
       this.setState({
         name: '',
         email: '',
         subject: '',
-        message: '',
-      });
+        message: ''
+      })
     }
   }
-  handleChange = (param, e) => {
+
+  handleChange (param, e) {
     this.setState({ [param]: e.target.value })
   }
 
-  render() {
+  render () {
     return this.state.sent ? (
-      <Tween from={{ y: '100', opacity: 0}} duration={2} ease={'power2.out'}>
+      <Tween from={{ y: '100', opacity: 0 }} duration={2} ease={'power2.out'}>
         <div className={styles.contactForm}>
           <div className={styles.contactFormContainer}>
             <h3>Thanks for contacting me, I will respond as soon as possible.</h3>
@@ -62,7 +69,6 @@ class ContactForm extends Component {
     ) : (
       <div className={styles.contactForm} id={'contactForm'}>
         <div className={styles.contactFormContainer}>
-          <h3>Get in Touch</h3>
           <AvForm onSubmit={this.handleSubmit.bind(this)}>
             <AvGroup controlid="formBasicEmail">
               <Label>Email address</Label>

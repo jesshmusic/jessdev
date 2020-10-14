@@ -1,27 +1,14 @@
 @import '../styles/base';
 
 .contactForm {
+  @include mx(auto);
   @include pb(4);
   @include pb(5);
-  @include make-row;
-  @include media-breakpoint-down(xl) {
-    @include mx(0);
-  }
 
-  h3 {
-    @include mb(2);
-  }
+  max-width: 60rem;
 
   input,
   textarea {
     color: $primary;
-  }
-}
-
-.contactFormContainer {
-  @include make-col(12);
-  @include media-breakpoint-up(md) {
-    @include make-col(8);
-    @include make-col-offset(2);
   }
 }

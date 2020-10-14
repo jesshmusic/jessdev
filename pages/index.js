@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import { useEffect } from 'react'
 import Layout from '../components/layout'
 import styles from '../styles/utils.module.scss'
@@ -22,9 +21,6 @@ export default function Home ({ homeData }) {
 
   return (
     <Layout home title={siteTitle}>
-      <Head>
-        <title>{siteTitle}</title>
-      </Head>
       <section className={styles.section}>
         <ReactMarkdown source={homeData.description} className={styles.text} />
       </section>
@@ -61,7 +57,10 @@ export default function Home ({ homeData }) {
           </div>
         </section>
       ) : null}
-      <ContactForm />
+      <section className={styles.section} id={'contactSection'}>
+        <h2>Get in Touch</h2>
+        <ContactForm />
+      </section>
     </Layout>
   )
 }

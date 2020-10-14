@@ -60,3 +60,37 @@
   @include pt($space);
   @include pb($space);
 }
+
+@mixin fluid-header() {
+  @include p(3);
+  @include media-breakpoint-up(md) {
+    @include p(4);
+  }
+  @include media-breakpoint-up(lg) {
+    @include p(5);
+  }
+}
+
+@mixin section-header() {
+  @include mx(auto);
+  @include mt(6);
+  @include mb(3);
+  @include px(3);
+
+  max-width: 80rem;
+}
+
+@mixin section-container() {
+  @include mx(auto);
+  @include px(3);
+
+  max-width: 60rem;
+}
+
+@mixin section-row() {
+  @include section-container;
+  @include media-breakpoint-up(md) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

@@ -10,23 +10,12 @@
 
 .mainContent {
   @include pb(6);
-  @include media-breakpoint-down(xl) {
-    @include px(4);
-
-    width: calc(100% - 4.5rem);
-  }
 }
 
 .header {
-  @include p(3);
+  @include fluid-header;
 
   position: relative;
-  @include media-breakpoint-up(md) {
-    @include p(4);
-  }
-  @include media-breakpoint-up(lg) {
-    @include p(5);
-  }
 
   h1 {
     @include font-size($h1-font-size);
@@ -44,7 +33,7 @@
 }
 
 .backToHome {
-  margin: 3rem 0 0;
+  @include section-header;
 
   a {
     color: $primary-dark;
