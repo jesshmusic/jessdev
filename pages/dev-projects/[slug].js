@@ -7,7 +7,7 @@ import { PropTypes } from 'prop-types'
 
 export default function Post ({ postData }) {
   return (
-    <Layout title={postData.title}>
+    <Layout>
       <h2 className={styles.pageTitle}>{ postData.title }</h2>
       <div className={styles.contentRow}>
         <div className={styles.content}>

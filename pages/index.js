@@ -11,7 +11,6 @@ import ProjectTease from '../components/ProjectTease'
 import { PropTypes } from 'prop-types'
 
 export default function Home ({ homeData }) {
-  const siteTitle = homeData.Title
 
   useEffect(() => {
     distributeCards('.project-card')
@@ -20,7 +19,7 @@ export default function Home ({ homeData }) {
   })
 
   return (
-    <Layout home title={siteTitle}>
+    <Layout home>
       <section className={styles.section}>
         <ReactMarkdown source={homeData.description} className={styles.text} />
       </section>

@@ -1,0 +1,60 @@
+@import '../styles/base';
+
+.footer {
+  @include pb(5);
+  @include pt(4);
+  @include px(5);
+
+  background: $primary-dark;
+  border-top: $success solid bsize(1);
+  color: $white;
+
+  @include media-breakpoint-up(lg) {
+    align-items: flex-start;
+    display: flex;
+  }
+}
+
+.column {
+
+  display: flex;
+  flex-direction: column;
+
+  @include media-breakpoint-up(lg) {
+    flex: 1;
+  }
+
+  h3 {
+    @include mb(4);
+  }
+
+  h4 {
+    @include mb(3);
+  }
+
+  a {
+    color: $white;
+    text-decoration: underline;
+    transition: color 250ms ease-in-out;
+
+    &:hover {
+      color: lighten($primary, 10%);
+    }
+  }
+
+  .socialLink {
+    @include mb(1);
+
+    color: $white;
+    text-decoration: none;
+    transition: color 250ms ease-in-out;
+
+    i {
+      @include mr(2);
+    }
+
+    &:hover {
+      color: lighten($primary, 10%);
+    }
+  }
+}
