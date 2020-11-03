@@ -17,8 +17,6 @@ export default function Home ({ homeData }) {
     distributeCardsOnScroll('.tech-card', '#clientSection')
   })
 
-  console.log(homeData)
-
   return (
     <Layout home>
       <section className={styles.section}>

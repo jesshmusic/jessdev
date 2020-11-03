@@ -2,7 +2,6 @@ import Head from 'next/head'
 import styles from './layout.module.scss'
 import Link from 'next/link'
 import { useEffect } from 'react'
-import Logo from './Logo'
 import { titleAnimateIn } from '../lib/animations'
 import { PropTypes } from 'prop-types'
 import Footer from './Footer'
@@ -33,7 +32,7 @@ export default function Layout ({ children, home }) {
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
-        <script src="https://kit.fontawesome.com/90b73f7468.js" crossOrigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/90b73f7468.js" crossOrigin="anonymous"/>
         <link rel="manifest" href="/site.webmanifest"/>
       </Head>
       <Header home={home} />

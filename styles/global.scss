@@ -38,48 +38,6 @@ img {
   @include img-fluid;
 }
 
-.logo-svg {
-  clip-rule: evenodd;
-  fill-rule: evenodd;
-  height: 70vh;
-  left: 0;
-  opacity: 0.15;
-  position: fixed;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-miterlimit: 1.5;
-  top: 0;
-  width: 70vh;
-  z-index: -1;
-
-  .logo-circle {
-    fill: none;
-    stroke: $secondary;
-
-    &__outer {
-      stroke-width: $spacer;
-    }
-
-    &__mid {
-      stroke-width: $spacer * 0.65;
-    }
-
-    &__inner {
-      stroke-width: $spacer * 0.25;
-    }
-  }
-
-  .logo-path {
-    fill: none;
-    stroke: $secondary;
-    stroke-width: $spacer * 0.25;
-
-    &__top {
-      stroke-width: $spacer * 0.125;
-    }
-  }
-}
-
 .carousel {
   &.carousel-slider {
     box-shadow: $box-shadow;

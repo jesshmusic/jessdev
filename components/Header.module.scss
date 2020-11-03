@@ -1,11 +1,18 @@
 @import '../styles/base';
 
 .header {
+  @extend %section-margins;
   @include responsive-padding;
 
+  background-color: rgba($c-indigo, 0.5);
+  background-position: calc(100% - 50px) center;
+  background-repeat: no-repeat;
   position: relative;
 
   h1 {
     @include font-size($h1-font-size);
+    @include m(0);
+
+    color: $white;
   }
 }

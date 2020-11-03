@@ -1,6 +1,12 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import 'react-responsive-carousel/lib/styles/carousel.min.css'
 import '../styles/global.scss'
+import { PropTypes } from 'prop-types'
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+const App = ({ Component, pageProps }) => <Component {...pageProps} />
+
+App.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object
 }
+
+export default App

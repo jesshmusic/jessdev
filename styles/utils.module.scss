@@ -1,19 +1,23 @@
 @import '../styles/base';
 
+
+
 .section {
+  @extend %section-margins;
   @include make-row;
 }
 
 .headingContainer {
+  @extend %section-margins;
   @include make-col-ready;
   @include make-col(12);
-  @include mt(6);
-  @include mb(3);
 }
 
 .text {
+  @extend %section-margins;
   @include responsive-padding-x;
   @include responsive-col(12, 8, 6);
+  @include font-size($font-size-lg);
 }
 
 .cardGridContainer {

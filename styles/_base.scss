@@ -5,3 +5,13 @@
 
 @import './bootstrap/mixins';
 @import './mixins';
+
+%section-margins {
+  @include margin(0, 0, 3, 0);
+  @include media-breakpoint-up(md) {
+    @include margin(0, 0, 4, 0);
+  }
+  @include media-breakpoint-up(lg) {
+    @include margin(0, 0, 5, 0);
+  }
+}

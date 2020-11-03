@@ -1,12 +1,21 @@
-import CardComponent from "./CardComponent";
+import CardComponent from './CardComponent'
+import { PropTypes } from 'prop-types'
 
-const ClientTease = ( { name, subtitle, description, logo, siteLink }) => (
+const ClientTease = ({ name, subtitle, description, logo, siteLink }) => (
   <CardComponent title={name}
-                 description={description}
-                 image={logo}
-                 subtitle={subtitle}
-                 siteLink={siteLink}
-                 className={'client-card'} />
-);
+    description={description}
+    image={logo}
+    subtitle={subtitle}
+    siteLink={siteLink}
+    className={'client-card'} />
+)
 
-export default ClientTease;
+ClientTease.propTypes = {
+  name: PropTypes.string,
+  subtitle: PropTypes.string,
+  description: PropTypes.string,
+  logo: PropTypes.object,
+  siteLink: PropTypes.string
+}
+
+export default ClientTease

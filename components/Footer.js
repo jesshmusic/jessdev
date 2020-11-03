@@ -17,21 +17,21 @@ const Footer = () => (
         target={'_blank'}
         rel={'noreferrer'}
         title={'LinkedIn'}>
-        <i className="fab fa-linkedin"/> LinkedIn Profile
+        <i aria-hidden className="fab fa-linkedin"/> LinkedIn Profile
       </a>
       <a href='https://existentialmusic.com/'
         className={styles.socialLink}
         target={'_blank'}
         rel={'noreferrer'}
         title={'Personal Blog'}>
-        <i className="fas fa-rss"/> Personal Blog
+        <i aria-hidden className="fas fa-rss"/> Personal Blog
       </a>
       <a href='https://jesshendricks.com/'
         className={styles.socialLink}
         target={'_blank'}
         rel={'noreferrer'}
         title={'Film Music Portfolio'}>
-        <i className="fas fa-icons"/> Film Music Portfolio
+        <i aria-hidden className="fas fa-icons"/> Film Music Portfolio
       </a>
     </div>
   </div>

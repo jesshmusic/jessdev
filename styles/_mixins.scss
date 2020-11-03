@@ -72,6 +72,13 @@
   }
 }
 
+@mixin margin($top, $right, $bottom, $left) {
+  @include mt($top);
+  @include mr($right);
+  @include mb($bottom);
+  @include ml($left);
+}
+
 @mixin responsive-padding($mobile: $spacer, $tablet: $spacer * 1.5, $desktop: $spacer + 3) {
   @include p($mobile);
   @include media-breakpoint-up(md) {

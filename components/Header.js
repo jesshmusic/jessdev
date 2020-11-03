@@ -4,7 +4,7 @@ import Logo from './Logo'
 import { PropTypes } from 'prop-types'
 
 const Header = ({ home }) => (
-  <header className={styles.header}>
+  <header className={styles.header} style={ { backgroundImage: 'url(\'images/LogoSmall.svg\')' } }>
     {home ? (
       <h1 id={'siteHeadingText'}>
         Jess Hendricks <small>Front End and Full Stack Developer</small>

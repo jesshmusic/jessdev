@@ -1,12 +1,17 @@
-import styles from "./Card.module.scss";
-import ReactMarkdown from "react-markdown";
-import CardComponent from "./CardComponent";
+import CardComponent from './CardComponent'
+import { PropTypes } from 'prop-types'
 
-const TechTease = ( { title, description, logo }) => (
+const TechTease = ({ title, description, logo }) => (
   <CardComponent title={title}
-                 description={description}
-                 image={logo}
-                 className={'tech-card'}  />
-);
+    description={description}
+    image={logo}
+    className={'tech-card'} />
+)
 
-export default TechTease;
+TechTease.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  logo: PropTypes.object.isRequired
+}
+
+export default TechTease

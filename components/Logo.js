@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import gsap from 'gsap'
+import styles from './Logo.module.scss'
 import { DrawSVGPlugin } from 'gsap/dist/DrawSVGPlugin'
 
 gsap.registerPlugin(DrawSVGPlugin)
@@ -17,48 +18,29 @@ export default function Logo () {
   return (
     <svg width="100%"
       height="100%"
-      viewBox="0 0 1200 1200"
+      viewBox="0 0 120 120"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      className={'logo-svg'}>
-      <g className={'logoGroup1'}>
-        <g transform="matrix(1,0,0,1,-49,49)">
-          <circle cx="649"
-            cy="610"
-            r="257"
-            className={'logo-circle logo-circle__outer'}/>
-          <g transform="matrix(0.904669,0,0,0.904669,61.8696,58.1518)">
-            <circle cx="649"
-              cy="610"
-              r="257"
-              className={'logo-circle logo-circle__mid'}/>
-          </g>
-          <g transform="matrix(0.854086,0,0,0.854086,94.6984,89.0078)">
-            <circle cx="649"
-              cy="610"
-              r="257"
-              className={'logo-circle logo-circle__inner'}/>
-          </g>
-        </g>
-        <g transform="matrix(1,0,0,1,0,29.5)">
-          <path d="M168.5,639.825L168.5,659L139,629.5L168.5,600L168.5,619.175L380.5,619.175L380.5,639.825L168.5,639.825Z"
-            className={'logo-path'}/>
-        </g>
-        <g transform="matrix(-1,0,0,1,1200,29.5)">
-          <path d="M168.5,639.825L168.5,659L139,629.5L168.5,600L168.5,619.175L380.5,619.175L380.5,639.825L168.5,639.825Z"
-            className={'logo-path'}/>
-        </g>
-        <g transform="matrix(6.12323e-17,-1,1,6.12323e-17,-29.5,1259)">
-          <path d="M168.5,639.825L168.5,659C152.219,659 139,645.781 139,629.5C139,613.219 152.219,600 168.5,600L168.5,619.175L380.5,619.175L380.5,639.825L168.5,639.825Z"
-            className={'logo-path'}/>
-        </g>
-        <g transform="matrix(-1.0104e-16,1.6501,1.47458,9.02918e-17,-328.246,-188.364)">
-          <path d="M174.589,639.825L191.724,659L165.362,659L139,629.5L165.362,600L191.724,600L174.589,619.175L380.5,619.175L380.5,639.825L174.589,639.825Z"
-            className={'logo-path logo-path__top'}/>
-        </g>
-        <g transform="matrix(1,0,0,1,-185,-185)">
-          <path d="M785,659L810.173,750.054L847.797,735.232L853.773,775.227L945.215,751.5L878.946,818.827L910.594,844L878.946,869.173L945.215,936.5L853.773,912.773L847.797,952.768L810.173,937.946L785,1029L759.827,937.946L722.203,952.768L716.227,912.773L624.785,936.5L691.054,869.173L659.406,844L691.054,818.827L624.785,751.5L716.227,775.227L722.203,735.232L759.827,750.054L785,659Z"
-            className={'logo-path'}/>
+      className={styles.logo}>
+      <g id="Layer-1" transform="matrix(1,0,0,1,-336.8,-534.49)">
+        <g opacity="0.75">
+          <path id="path3768-2"
+            className={`logo-path ${styles.logoPath1}`}
+            d="M444.193,620.829L398.17,647.407L352.137,620.829L398.166,594.257L444.193,620.829Z"/>
+          <path id="path3770-1"
+            className={`logo-path ${styles.logoPath2}`}
+            d="M398.166,594.257L398.166,541.107L352.137,567.679L352.137,620.829L398.166,594.257Z"/>
+          <path id="path3766-7"
+            className={`logo-path ${styles.logoPath3}`}
+            d="M367.48,611.97L398.166,629.687L398.166,594.254L367.48,576.537L367.48,611.97Z"/>
+          <path id="path3780-9"
+            className={`logo-path ${styles.logoPath4}`}
+            d="M444.193,620.829L398.17,594.259L398.164,541.106L444.193,567.681L444.193,620.829Z"/>
+          <path id="path3772-4"
+            className={`logo-path ${styles.logoPath5}`} d="M367.48,576.54L398.166,594.257L428.852,576.54L398.166,558.823L367.48,576.54Z"/>
+          <path id="path3774-4"
+            className={`logo-path ${styles.logoPath6}`}
+            d="M398.17,629.69L428.856,611.973L428.856,576.54L398.17,594.257L398.17,629.69Z"/>
         </g>
       </g>
     </svg>

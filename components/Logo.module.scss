@@ -1,0 +1,49 @@
+@import '../styles/base';
+
+.logo {
+  clip-rule: evenodd;
+  fill-rule: evenodd;
+  height: 70vh;
+  left: 0;
+  opacity: 0.15;
+  position: fixed;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-miterlimit: 1.5;
+  top: 0;
+  width: 70vh;
+  z-index: -1;
+}
+
+.logoPath1 {
+  fill: rgb(129, 70, 70);
+  fill-rule: nonzero;
+}
+
+.logoPath2 {
+  fill: rgb(179, 147, 84);
+  fill-rule: nonzero;
+}
+
+.logoPath3 {
+  fill: rgb(92, 138, 128);
+  fill-opacity: 0.75;
+  fill-rule: nonzero;
+}
+
+.logoPath4 {
+  fill: rgb(35, 66, 60);
+  fill-rule: nonzero;
+}
+
+.logoPath5 {
+  fill: rgb(196, 143, 62);
+  fill-opacity: 0.75;
+  fill-rule: nonzero;
+}
+
+.logoPath6 {
+  fill: rgb(188, 134, 134);
+  fill-opacity: 0.75;
+  fill-rule: nonzero;
+}
