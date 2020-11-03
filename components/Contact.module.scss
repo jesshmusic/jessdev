@@ -2,6 +2,7 @@
 
 .contactForm {
   @include pb(5);
+  @include responsive-padding-x;
 
   input,
   textarea {

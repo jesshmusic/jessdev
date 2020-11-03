@@ -1,47 +1,45 @@
 @import '../styles/base';
 
 .card {
-  @include make-col-ready;
-  @include make-col(12);
-
-  min-height: 11rem;
+  box-shadow: $box-shadow;
   opacity: 0.75;
   overflow: hidden;
   transform: scale(1);
+  transition: box-shadow 350ms ease-in-out;
   z-index: 1;
 
+  &:hover {
+    box-shadow: $box-shadow-hover;
+  }
+
   @include media-breakpoint-up(md) {
-    @include make-col(6);
+    border-bottom-right-radius: $border-radius-lg;
   }
 }
 
 .cardContent {
-  @include py(3);
-  @include pr(3);
-
   position: relative;
 }
 
 .header {
   background-color: lighten($primary, 25%);
-  border: solid 0.25rem $primary;
-  margin-top: 1.5rem;
+  margin-top: 0;
   overflow: hidden;
   padding: bsize(3) 0 0;
   position: relative;
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(md) {
     border-bottom-right-radius: $border-radius-lg;
-    height: 5rem;
-    margin-left: 6rem;
+    height: 8rem;
+    margin-left: 8rem;
     margin-top: 0;
-    padding: bsize(3) 1rem bsize(3) 6rem;
+    padding: 0 1rem;
   }
 
   h3,
   h4 {
     @include pb(3);
-    @include media-breakpoint-up(xl) {
+    @include media-breakpoint-up(md) {
       @include pb(0);
     }
   }
@@ -61,23 +59,22 @@
 
 .content {
   background: $white;
-  border: solid 0.25rem $primary;
-  margin: 0 -0.25rem -0.25rem;
+  margin: 0;
   overflow: hidden;
   padding: bsize(2);
 
-  @include media-breakpoint-up(xl) {
+  @include media-breakpoint-up(md) {
     align-items: center;
     border-bottom-right-radius: $border-radius-lg;
-    bottom: -0.25rem;
+    bottom: 0;
     display: flex;
     height: 0;
     margin: 0;
     opacity: 0;
-    padding: 1rem 2rem 1rem 6rem;
+    padding: 1rem 2rem;
     position: absolute;
-    right: -0.25rem;
-    top: -0.25rem;
+    right: 0;
+    top: 0;
     z-index: 1;
   }
 }
@@ -97,14 +94,14 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border: solid 0.5rem $primary;
-  height: 10rem;
+  //border: solid 0.5rem $primary;
+  height: 8rem;
 
-  @include media-breakpoint-up(xl) {
-    border-radius: 100%;
-    margin: -1.5rem auto;
+  @include media-breakpoint-up(md) {
+    //border-radius: 100%;
+    margin: 0 auto;
     position: absolute;
-    width: 10rem;
+    width: 8rem;
     z-index: 2;
   }
 }

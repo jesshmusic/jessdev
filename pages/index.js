@@ -27,13 +27,11 @@ export default function Home ({ homeData }) {
           <div className={styles.headingContainer}>
             <h2>Projects</h2>
           </div>
-          <div className={styles.cardGridContainer}>
-            <div className={styles.cardGrid}>
-              {homeData.dev_projects.map((props) => (
-                // eslint-disable-next-line react/prop-types
-                <ProjectTease {...props} key={props.slug} scrollTrigger={'#projectSection'} />
-              ))}
-            </div>
+          <div className={styles.cardGrid}>
+            {homeData.dev_projects.map((props) => (
+              // eslint-disable-next-line react/prop-types
+              <ProjectTease {...props} key={props.slug} scrollTrigger={'#projectSection'} />
+            ))}
           </div>
         </section>
       ) : null}
@@ -42,13 +40,11 @@ export default function Home ({ homeData }) {
           <div className={styles.headingContainer}>
             <h2>Clients</h2>
           </div>
-          <div className={styles.cardGridContainer}>
-            <div className={styles.cardGrid}>
-              {homeData.Client.map((props) => (
+          <div className={styles.cardGrid}>
+            {homeData.Client.map((props) => (
               // eslint-disable-next-line react/prop-types
-                <ClientTease { ...props } key={props.id} scrollTrigger={'#clientSection'} />
-              ))}
-            </div>
+              <ClientTease { ...props } key={props.id} scrollTrigger={'#clientSection'} />
+            ))}
           </div>
         </section>
       ) : null}
@@ -57,13 +53,11 @@ export default function Home ({ homeData }) {
           <div className={styles.headingContainer}>
             <h2>Technology</h2>
           </div>
-          <div className={styles.cardGridContainer}>
-            <div className={styles.cardGrid}>
-              {homeData.Technology.map((props) => (
+          <div className={styles.cardGrid}>
+            {homeData.Technology.map((props) => (
               // eslint-disable-next-line react/prop-types
-                <TechTease {...props} key={props.id} scrollTrigger={'#techSection'} />
-              ))}
-            </div>
+              <TechTease {...props} key={props.id} scrollTrigger={'#techSection'} />
+            ))}
           </div>
         </section>
       ) : null}

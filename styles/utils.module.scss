@@ -6,6 +6,7 @@
 
 .headingContainer {
   @extend %section-margins;
+  @include responsive-padding-x;
 }
 
 .text {
@@ -14,8 +15,18 @@
   @include font-size($font-size-lg);
 }
 
-.cardGridContainer {
-}
-
 .cardGrid {
+  display: grid;
+  grid-auto-rows: 16rem;
+  grid-gap: bsize(2);
+  grid-template-columns: 1fr;
+
+  @include media-breakpoint-up(md) {
+    grid-auto-rows: 8rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

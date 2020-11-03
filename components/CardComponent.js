@@ -6,8 +6,8 @@ import DefaultCard from './cards/DefaultCard'
 import InternalLinkCard from './cards/InternalLinkCard'
 
 const CardComponent = (props) => {
-  const cardID = `card-${camelize(props.title)}`
-  const cardContentID = `card-${camelize(props.title)}-content`
+  const cardID = `card-${camelize(props.title)}-${props.className}`
+  const cardContentID = `${cardID}-content`
   const cardTarget = `#${cardID}-content`
 
   if (props.isInternalLink) {
