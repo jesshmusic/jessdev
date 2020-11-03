@@ -1,7 +1,7 @@
 @import '../../styles/base';
 
 .pageTitle {
-  @include section-header;
+  //@include section-header;
   @include mt(0);
 }
 
@@ -27,7 +27,7 @@
   @include mb(3);
 
   h2 {
-    @include section-header;
+    //@include section-header;
   }
 }
 

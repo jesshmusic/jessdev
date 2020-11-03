@@ -40,16 +40,6 @@
   @include pb(6);
 }
 
-.header {
-  @include fluid-header;
-
-  position: relative;
-
-  h1 {
-    @include font-size($h1-font-size);
-  }
-}
-
 .headerImage {
   height: 6rem;
   width: 6rem;
@@ -61,7 +51,7 @@
 }
 
 .backToHome {
-  @include section-header;
+  //@include section-header;
 
   a {
     color: $primary-dark;

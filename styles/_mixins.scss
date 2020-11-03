@@ -61,18 +61,45 @@
   @include pb($space);
 }
 
-@mixin fluid-header() {
-  @include p(3);
+@mixin responsive-col($size, $size-md, $size-lg) {
+  @include make-col-ready;
+  @include make-col($size);
   @include media-breakpoint-up(md) {
-    @include p(4);
+    @include make-col($size-md);
   }
   @include media-breakpoint-up(lg) {
-    @include p(5);
+    @include make-col($size-lg);
   }
 }
 
-@mixin section-header() {
+@mixin responsive-padding($mobile: $spacer, $tablet: $spacer * 1.5, $desktop: $spacer + 3) {
+  @include p($mobile);
+  @include media-breakpoint-up(md) {
+    @include p($tablet);
+  }
+  @include media-breakpoint-up(lg) {
+    @include p($desktop);
+  }
+}
 
+@mixin responsive-padding-x($mobile: $spacer, $tablet: $spacer * 1.5, $desktop: $spacer + 3) {
+  @include px($mobile);
+  @include media-breakpoint-up(md) {
+    @include px($tablet);
+  }
+  @include media-breakpoint-up(lg) {
+    @include px($desktop);
+  }
+}
+
+@mixin responsive-padding-y($mobile: $spacer, $tablet: $spacer * 1.5, $desktop: $spacer + 3) {
+  @include py($mobile);
+  @include media-breakpoint-up(md) {
+    @include py($tablet);
+  }
+  @include media-breakpoint-up(lg) {
+    @include py($desktop);
+  }
 }
 
 @mixin section-container() {
