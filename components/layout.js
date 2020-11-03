@@ -6,6 +6,7 @@ import Logo from './Logo'
 import { titleAnimateIn } from '../lib/animations'
 import { PropTypes } from 'prop-types'
 import Footer from './Footer'
+import Header from './Header'
 
 export default function Layout ({ children, home }) {
   useEffect(() => {
@@ -15,17 +16,17 @@ export default function Layout ({ children, home }) {
   return (
     <div className={styles.wrapper}>
       <Head>
-        <title>Jess Hendricks | Software Engineer | Web Developer</title>
-        <meta name="title" content="Jess Hendricks | Software Engineer | Web Developer" />
+        <title>Jess Hendricks | Front End and Full Stack Developer</title>
+        <meta name="title" content="Jess Hendricks | Front End and Full Stack Developer" />
         <meta name="description" content=" With over 7 years of experience, I can create a custom web presence for almost any need using many of the latest technologies. "/>
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://webdev.existentialmusic.com/" />
-        <meta property="og:title" content="Jess Hendricks | Software Engineer | Web Developer" />
+        <meta property="og:title" content="Jess Hendricks | Front End and Full Stack Developer" />
         <meta property="og:description" content=" With over 7 years of experience, I can create a custom web presence for almost any need using many of the latest technologies. " />
         <meta property="og:image" content="/images/FeatureImage.jpg" />
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://webdev.existentialmusic.com/" />
-        <meta property="twitter:title" content="Jess Hendricks | Software Engineer | Web Developer" />
+        <meta property="twitter:title" content="Jess Hendricks | Front End and Full Stack Developer" />
         <meta property="twitter:description" content=" With over 7 years of experience, I can create a custom web presence for almost any need using many of the latest technologies. " />
         <meta property="twitter:image" content="/images/FeatureImage.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -35,39 +36,17 @@ export default function Layout ({ children, home }) {
         <script src="https://kit.fontawesome.com/90b73f7468.js" crossOrigin="anonymous"></script>
         <link rel="manifest" href="/site.webmanifest"/>
       </Head>
-      <header className={styles.header}>
-        {home ? (
-          <h1 id={'siteHeadingText'}>
-            Jess Hendricks <small>Software Engineer | Web Developer</small>
-          </h1>
-        ) : (
-          <h1>
-            <Link href="/">
-              <a id={'siteHeadingText'}>
-                Jess Hendricks <small>Software Engineer | Web Developer</small>
-              </a>
-            </Link>
-          </h1>
-        )}
-        <Logo />
-      </header>
+      <Header home={home} />
       <main className={styles.mainContent}>
         <div className={styles.container}>
-          <div className={styles.row}>
-            <div className={styles.sidebar}>
-
+          {children}
+          {!home && (
+            <div className={styles.backToHome}>
+              <Link href="/">
+                <a>← Back to home</a>
+              </Link>
             </div>
-            <div className={styles.content}>
-              {children}
-              {!home && (
-                <div className={styles.backToHome}>
-                  <Link href="/">
-                    <a>← Back to home</a>
-                  </Link>
-                </div>
-              )}
-            </div>
-          </div>
+          )}
         </div>
       </main>
       <Footer />

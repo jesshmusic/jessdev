@@ -3,7 +3,7 @@ import styles from './footer.module.scss'
 const Footer = () => (
   <div className={styles.footer}>
     <div className={styles.column}>
-      <h3>Jess Hendricks <small>Software Engineer | Web Developer</small></h3>
+      <h3>Jess Hendricks <small>Front End and Full Stack Developer</small></h3>
       <address>
         Easthampton, MA <br />
         <a href={'https://existentialmusic.com/'} target={'_blank'} rel={'noreferrer'}>ExistentialMusic.com</a> <br />
