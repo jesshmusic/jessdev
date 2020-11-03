@@ -72,12 +72,7 @@
 }
 
 @mixin section-header() {
-  @include mx(auto);
-  @include mt(6);
-  @include mb(3);
-  @include px(3);
 
-  max-width: 80rem;
 }
 
 @mixin section-container() {

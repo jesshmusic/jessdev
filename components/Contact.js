@@ -68,60 +68,58 @@ class ContactForm extends Component {
       </Tween>
     ) : (
       <div className={styles.contactForm} id={'contactForm'}>
-        <div className={styles.contactFormContainer}>
-          <AvForm onSubmit={this.handleSubmit.bind(this)}>
-            <AvGroup controlid="formBasicEmail">
-              <Label>Email address</Label>
-              <AvInput
-                type="email"
-                name="email"
-                value={this.state.email}
-                onChange={this.handleChange.bind(this, 'email')}
-                placeholder="Enter email"
-                required
-              />
-              <AvFeedback>This field is required</AvFeedback>
-            </AvGroup>
-            <AvGroup controlid="formBasicName">
-              <Label>Name</Label>
-              <AvInput
-                type="text"
-                name="name"
-                value={this.state.name}
-                onChange={this.handleChange.bind(this, 'name')}
-                placeholder="Name"
-                required
-              />
-              <AvFeedback>This field is required</AvFeedback>
-            </AvGroup>
-            <AvGroup controlid="formBasicSubject">
-              <Label>Subject</Label>
-              <AvInput
-                type="text"
-                name="subject"
-                value={this.state.subject}
-                onChange={this.handleChange.bind(this, 'subject')}
-                placeholder="Subject"
-                required
-              />
-              <AvFeedback>This field is required</AvFeedback>
-            </AvGroup>
-            <AvGroup controlid="formBasicMessage">
-              <Label>Message</Label>
-              <AvInput
-                type="textarea"
-                name="message"
-                value={this.state.message}
-                onChange={this.handleChange.bind(this, 'message')}
-                required
-              />
-              <AvFeedback>This field is required</AvFeedback>
-            </AvGroup>
-            <Button variant="primary" type="submit" className={'border-button'}>
+        <AvForm onSubmit={this.handleSubmit.bind(this)}>
+          <AvGroup controlid="formBasicEmail">
+            <Label>Email address</Label>
+            <AvInput
+              type="email"
+              name="email"
+              value={this.state.email}
+              onChange={this.handleChange.bind(this, 'email')}
+              placeholder="Enter email"
+              required
+            />
+            <AvFeedback>This field is required</AvFeedback>
+          </AvGroup>
+          <AvGroup controlid="formBasicName">
+            <Label>Name</Label>
+            <AvInput
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={this.handleChange.bind(this, 'name')}
+              placeholder="Name"
+              required
+            />
+            <AvFeedback>This field is required</AvFeedback>
+          </AvGroup>
+          <AvGroup controlid="formBasicSubject">
+            <Label>Subject</Label>
+            <AvInput
+              type="text"
+              name="subject"
+              value={this.state.subject}
+              onChange={this.handleChange.bind(this, 'subject')}
+              placeholder="Subject"
+              required
+            />
+            <AvFeedback>This field is required</AvFeedback>
+          </AvGroup>
+          <AvGroup controlid="formBasicMessage">
+            <Label>Message</Label>
+            <AvInput
+              type="textarea"
+              name="message"
+              value={this.state.message}
+              onChange={this.handleChange.bind(this, 'message')}
+              required
+            />
+            <AvFeedback>This field is required</AvFeedback>
+          </AvGroup>
+          <Button variant="primary" type="submit" className={'border-button'}>
               Submit
-            </Button>
-          </AvForm>
-        </div>
+          </Button>
+        </AvForm>
       </div>
     )
   }

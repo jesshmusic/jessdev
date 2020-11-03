@@ -13,7 +13,7 @@ export default function Layout ({ children, home }) {
   })
 
   return (
-    <div className={styles.content}>
+    <div className={styles.wrapper}>
       <Head>
         <title>Jess Hendricks | Software Engineer | Web Developer</title>
         <meta name="title" content="Jess Hendricks | Software Engineer | Web Developer" />
@@ -52,14 +52,23 @@ export default function Layout ({ children, home }) {
         <Logo />
       </header>
       <main className={styles.mainContent}>
-        {children}
-        {!home && (
-          <div className={styles.backToHome}>
-            <Link href="/">
-              <a>← Back to home</a>
-            </Link>
+        <div className={styles.container}>
+          <div className={styles.row}>
+            <div className={styles.sidebar}>
+
+            </div>
+            <div className={styles.content}>
+              {children}
+              {!home && (
+                <div className={styles.backToHome}>
+                  <Link href="/">
+                    <a>← Back to home</a>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
-        )}
+        </div>
       </main>
       <Footer />
     </div>

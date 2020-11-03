@@ -1,11 +1,9 @@
 @import '../styles/base';
 
 .contactForm {
-  @include mx(auto);
-  @include pb(4);
+  @include make-col-ready;
+  @include make-col(12);
   @include pb(5);
-
-  max-width: 60rem;
 
   input,
   textarea {

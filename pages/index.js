@@ -11,12 +11,13 @@ import ProjectTease from '../components/ProjectTease'
 import { PropTypes } from 'prop-types'
 
 export default function Home ({ homeData }) {
-
   useEffect(() => {
     distributeCards('.project-card')
     distributeCards('.client-card')
     distributeCardsOnScroll('.tech-card', '#clientSection')
   })
+
+  console.log(homeData)
 
   return (
     <Layout home>
@@ -25,39 +26,53 @@ export default function Home ({ homeData }) {
       </section>
       {homeData.dev_projects && homeData.dev_projects.length > 0 ? (
         <section className={styles.section} id={'projectSection'}>
-          <h2>Projects</h2>
-          <div className={styles.cardGrid}>
-            {homeData.dev_projects.map((props) => (
-              // eslint-disable-next-line react/prop-types
-              <ProjectTease {...props} key={props.slug} scrollTrigger={'#projectSection'} />
-            ))}
+          <div className={styles.headingContainer}>
+            <h2>Projects</h2>
+          </div>
+          <div className={styles.cardGridContainer}>
+            <div className={styles.cardGrid}>
+              {homeData.dev_projects.map((props) => (
+                // eslint-disable-next-line react/prop-types
+                <ProjectTease {...props} key={props.slug} scrollTrigger={'#projectSection'} />
+              ))}
+            </div>
           </div>
         </section>
       ) : null}
       {homeData.Client && homeData.Client.length > 0 ? (
         <section className={styles.section} id={'clientSection'}>
-          <h2>Clients</h2>
-          <div className={styles.cardGrid}>
-            {homeData.Client.map((props) => (
+          <div className={styles.headingContainer}>
+            <h2>Clients</h2>
+          </div>
+          <div className={styles.cardGridContainer}>
+            <div className={styles.cardGrid}>
+              {homeData.Client.map((props) => (
               // eslint-disable-next-line react/prop-types
-              <ClientTease { ...props } key={props.id} scrollTrigger={'#clientSection'} />
-            ))}
+                <ClientTease { ...props } key={props.id} scrollTrigger={'#clientSection'} />
+              ))}
+            </div>
           </div>
         </section>
       ) : null}
       {homeData.Technology && homeData.Technology.length > 0 ? (
         <section className={styles.section} id={'techSection'}>
-          <h2>Technology</h2>
-          <div className={styles.cardGrid}>
-            {homeData.Technology.map((props) => (
+          <div className={styles.headingContainer}>
+            <h2>Technology</h2>
+          </div>
+          <div className={styles.cardGridContainer}>
+            <div className={styles.cardGrid}>
+              {homeData.Technology.map((props) => (
               // eslint-disable-next-line react/prop-types
-              <TechTease {...props} key={props.id} scrollTrigger={'#techSection'} />
-            ))}
+                <TechTease {...props} key={props.id} scrollTrigger={'#techSection'} />
+              ))}
+            </div>
           </div>
         </section>
       ) : null}
       <section className={styles.section} id={'contactSection'}>
-        <h2>Get in Touch</h2>
+        <div className={styles.headingContainer}>
+          <h2>Get in Touch</h2>
+        </div>
         <ContactForm />
       </section>
     </Layout>

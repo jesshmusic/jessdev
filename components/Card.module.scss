@@ -1,6 +1,12 @@
 @import '../styles/base';
 
 .card {
+  @include make-col-ready;
+  @include make-col(12);
+  @include media-breakpoint-up(md) {
+    @include make-col(6);
+  }
+
   min-height: 11rem;
   opacity: 0.75;
   overflow: hidden;
@@ -9,20 +15,25 @@
 }
 
 .cardContent {
+  @include py(3);
+  @include pr(3);
+
   position: relative;
 }
 
 .header {
   background-color: lighten($primary, 25%);
   border: solid 0.25rem $primary;
+  margin-top: 1.5rem;
   overflow: hidden;
   padding: bsize(3) 0 0;
+  position: relative;
 
   @include media-breakpoint-up(xl) {
     border-bottom-right-radius: $border-radius-lg;
     height: 5rem;
     margin-left: 6rem;
-    margin-top: 1.5rem;
+    margin-top: 0;
     padding: bsize(3) 1rem bsize(3) 6rem;
   }
 
@@ -55,13 +66,17 @@
   padding: bsize(2);
 
   @include media-breakpoint-up(xl) {
+    align-items: center;
     border-bottom-right-radius: $border-radius-lg;
-    bottom: 0;
+    bottom: -0.25rem;
+    display: flex;
     height: 0;
-    margin: 0 0 0 -6rem;
+    margin: 0;
     opacity: 0;
-    padding: bsize(3) 2rem bsize(3) 6rem;
+    padding: 1rem 2rem 1rem 6rem;
     position: absolute;
+    right: -0.25rem;
+    top: -0.25rem;
     z-index: 1;
   }
 }

@@ -6,6 +6,8 @@ import { Carousel } from 'react-responsive-carousel'
 import { PropTypes } from 'prop-types'
 
 export default function Post ({ postData }) {
+  const buttonText = postData.link && postData.link.includes('github') ? 'View on Github' : 'View App';
+
   return (
     <Layout>
       <h2 className={styles.pageTitle}>{ postData.title }</h2>
@@ -17,12 +19,15 @@ export default function Post ({ postData }) {
           <img src={postData.thumbnail.url} alt={postData.thumbnail.alt}/>
         </div>
       </div>
+      <div className={styles.contentRow}>
+
+      </div>
       <div className={styles.linkRow}>
         <a href={postData.link}
           className={styles.githubLink}
           rel={'noreferrer noopener'}
           target={'_blank'}>
-          View on Github
+          {buttonText}
         </a>
       </div>
       {postData.gallery && postData.gallery.length > 0 ? (
