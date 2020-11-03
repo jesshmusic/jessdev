@@ -1,8 +1,6 @@
 @import '../styles/base';
 
 .contactForm {
-  @include make-col-ready;
-  @include make-col(12);
   @include pb(5);
 
   input,

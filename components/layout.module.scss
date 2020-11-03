@@ -1,31 +1,6 @@
 @import '../styles/base';
 
 .container {
-  @include make-container();
-}
-
-.row {
-  @include make-row;
-}
-
-.sidebar {
-  @include make-col(12);
-  @include media-breakpoint-up(md) {
-    @include make-col(4);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col(3);
-  }
-}
-
-.content {
-  @include make-col(12);
-  @include media-breakpoint-up(md) {
-    @include make-col(8);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col(9);
-  }
 }
 
 .wrapper {
@@ -38,16 +13,6 @@
 
 .mainContent {
   @include pb(6);
-}
-
-.headerImage {
-  height: 6rem;
-  width: 6rem;
-}
-
-.headerHomeImage {
-  height: 8rem;
-  width: 8rem;
 }
 
 .backToHome {

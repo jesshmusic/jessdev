@@ -61,15 +61,11 @@
   @include pb($space);
 }
 
-@mixin responsive-col($size, $size-md, $size-lg) {
-  @include make-col-ready;
-  @include make-col($size);
-  @include media-breakpoint-up(md) {
-    @include make-col($size-md);
-  }
-  @include media-breakpoint-up(lg) {
-    @include make-col($size-lg);
-  }
+@mixin padding($top, $right, $bottom, $left) {
+  @include pt($top);
+  @include pr($right);
+  @include pb($bottom);
+  @include pl($left);
 }
 
 @mixin margin($top, $right, $bottom, $left) {
@@ -106,20 +102,5 @@
   }
   @include media-breakpoint-up(lg) {
     @include py($desktop);
-  }
-}
-
-@mixin section-container() {
-  @include mx(auto);
-  @include px(3);
-
-  max-width: 60rem;
-}
-
-@mixin section-row() {
-  @include section-container;
-  @include media-breakpoint-up(md) {
-    display: flex;
-    flex-wrap: wrap;
   }
 }

@@ -1,14 +1,10 @@
 @import '../../styles/base';
 
 .pageTitle {
-  //@include section-header;
   @include mt(0);
 }
 
 .contentRow {
-  @include section-row;
-
-  max-width: 80rem;
 }
 
 .content {
@@ -27,7 +23,7 @@
   @include mb(3);
 
   h2 {
-    //@include section-header;
+
   }
 }
 
@@ -44,7 +40,6 @@
 }
 
 .linkRow {
-  @include section-container;
   @include mt(6);
 
   display: flex;
