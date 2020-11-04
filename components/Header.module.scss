@@ -17,3 +17,36 @@
     color: $white;
   }
 }
+
+.openOverlay {
+  background: none;
+  border: 0;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  position: absolute;
+  right: 15rem;
+  top: 4.5rem;
+  width: 34px;
+  z-index: 100;
+
+  span {
+    background-color: #fff;
+    cursor: pointer;
+    display: block;
+    height: 1px;
+    margin-top: 8px;
+  }
+}
+
+.barTop {
+
+}
+
+.barMiddle {
+
+}
+
+.barBottom {
+
+}

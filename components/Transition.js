@@ -41,6 +41,6 @@ const Transition = ({ children, location }) => {
 }
 Transition.propTypes = {
   children: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.string.isRequired
 }
 export default Transition
