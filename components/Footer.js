@@ -1,7 +1,7 @@
 import styles from './footer.module.scss'
 
 const Footer = () => (
-  <div className={styles.footer}>
+  <div className={styles.footer} id={'pageFooter'}>
     <div className={styles.column}>
       <h3>Jess Hendricks <small>Front End and Full Stack Developer</small></h3>
       <address>

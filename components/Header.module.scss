@@ -9,7 +9,8 @@
   background-repeat: no-repeat;
   position: relative;
 
-  h1 {
+  h1,
+  a {
     @include font-size($h1-font-size);
     @include m(0);
 

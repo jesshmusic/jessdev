@@ -21,6 +21,7 @@ export default function Logo () {
       viewBox="0 0 120 120"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
+      id="backgroundLogo"
       className={styles.logo}>
       <g id="Layer-1" transform="matrix(1,0,0,1,-336.8,-534.49)">
         <g opacity="0.75">
