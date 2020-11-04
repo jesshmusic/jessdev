@@ -1,6 +1,7 @@
 @import '../styles/base';
 
 .pageTitle,
+.heading,
 .contentRow,
 .content,
 .gallery,
@@ -9,6 +10,26 @@
 .cardGrid {
   @extend %section-margins;
   @include responsive-padding-x;
+}
+
+.pageTitle {
+  @include responsive-padding-y($spacer * 0.5, $spacer * 0.75, $spacer);
+
+  background-color: rgba($c-brown, 0.65);
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+  color: $white;
+  width: 75vh;
+}
+
+.heading {
+  @include py(2);
+
+  background-color: rgba($c-red, 0.65);
+  border-bottom-right-radius: 2rem;
+  border-top-right-radius: 2rem;
+  color: $white;
+  width: 75vh;
 }
 
 .content {
@@ -27,6 +48,7 @@
 .mainContent {
   @include media-breakpoint-up(md) {
     display: flex;
+    justify-content: space-between;
   }
 }
 
@@ -79,6 +101,7 @@
     border-bottom-right-radius: $border-radius-lg;
     box-shadow: $box-shadow;
     flex: 1;
+    max-width: 25vh;
     overflow: hidden;
   }
 

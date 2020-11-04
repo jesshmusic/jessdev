@@ -13,6 +13,7 @@ About.propTypes = {
 
 export async function getStaticProps () {
   const postData = await getAboutData()
+  console.log(postData)
   return {
     props: {
       postData

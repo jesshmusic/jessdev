@@ -19,7 +19,8 @@
 %card-grid {
   display: grid;
   grid-auto-rows: 16rem;
-  grid-gap: bsize(2);
+  //grid-gap: bsize(2);
+  grid-row-gap: bsize(1);
   grid-template-columns: 1fr;
 
   @include media-breakpoint-up(md) {

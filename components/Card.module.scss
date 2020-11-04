@@ -1,19 +1,17 @@
 @import '../styles/base';
 
 .card {
-  box-shadow: $box-shadow;
+  box-shadow: 0;
   opacity: 0.75;
   overflow: hidden;
   transform: scale(1);
-  transition: box-shadow 350ms ease-in-out;
+  transition: box-shadow 350ms ease-in-out, transform 350ms ease-in-out;
   z-index: 1;
-
-  @include media-breakpoint-up(md) {
-    border-bottom-right-radius: $border-radius-lg;
-  }
 
   &:hover {
     box-shadow: $box-shadow-hover;
+    transform: scale(1.01);
+    z-index: 2;
   }
 }
 
@@ -29,7 +27,6 @@
   position: relative;
 
   @include media-breakpoint-up(md) {
-    border-bottom-right-radius: $border-radius-lg;
     height: 8rem;
     margin-left: 8rem;
     margin-top: 0;
@@ -65,7 +62,7 @@
 
   @include media-breakpoint-up(md) {
     align-items: center;
-    border-bottom-right-radius: $border-radius-lg;
+    //border-bottom-right-radius: $border-radius-lg;
     bottom: 0;
     display: flex;
     height: 0;

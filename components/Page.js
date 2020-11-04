@@ -9,7 +9,7 @@ import { WorkTease } from './WorkTease'
 
 const Page = (props) => (
   <Layout>
-    <h2 className={styles.pageTitle}>{ props.title }</h2>
+    <h1 className={`${styles.pageTitle} page-title`}>{ props.title }</h1>
     <article className={styles.mainContent}>
       <div className={styles.content}>
         <ReactMarkdown source={props.content} />
@@ -21,8 +21,8 @@ const Page = (props) => (
       ) : null}
     </article>
     {props.tech && props.tech.length > 0 ? (
-      <section className={styles.contentRow} id={'techSection'}>
-        <h3 className={styles.heading}>Technology</h3>
+      <section id={'techSection'}>
+        <h3 className={`${styles.heading} page-heading`}>Technology</h3>
         <div className={styles.cardGrid}>
           {props.tech.map((tech) => {
             return <TechTease
@@ -45,21 +45,23 @@ const Page = (props) => (
         </a>
       </div>) : null}
     {props.gallery && props.gallery.length > 0 ? (
-      <div className={styles.gallery}>
-        <h3 className={styles.heading}>Screenshots</h3>
-        <Carousel autoPlay={true}>
-          {props.gallery.map(image => (
-            <div key={image.id}>
-              <img src={image.formats ? image.formats.large.url : image.url} alt={image.alt}/>
-            </div>
-          ))}
-        </Carousel>
-      </div>
+      <section id={'gallerySection'}>
+        <h3 className={`${styles.heading} page-heading`}>Screenshots</h3>
+        <div className={styles.gallery}>
+          <Carousel autoPlay={true}>
+            {props.gallery.map(image => (
+              <div key={image.id}>
+                <img src={image.formats ? image.formats.large.url : image.url} alt={image.alt}/>
+              </div>
+            ))}
+          </Carousel>
+        </div>
+      </section>
     ) : null}
     {props.work && props.work.length > 0 ? (
-      <section className={styles.contentRow} id={'workSection'}>
-        <h3 className={styles.heading}>Experience</h3>
-        <div>
+      <section id={'workSection'}>
+        <h3 className={`${styles.heading} page-heading`}>Experience</h3>
+        <div className={styles.contentRow}>
           {props.work.map((work) => {
             return <WorkTease {...work} key={`work${work.id}`} />
           })}
@@ -67,11 +69,11 @@ const Page = (props) => (
       </section>
     ) : null}
     {props.skills && props.skills.length > 0 ? (
-      <section className={styles.contentRow} id={'workSection'}>
-        <h3 className={styles.heading}>Experience</h3>
-        <div>
+      <section id={'workSection'}>
+        <h3 className={`${styles.heading} page-heading`}>Skills</h3>
+        <div className={styles.contentRow}>
           {props.skills.map((skill) => {
-            return <SkillTease {...skill} key={`work${skill.id}`} />
+            return <SkillTease {...skill} key={`skills${skill.id}`} />
           })}
         </div>
       </section>
@@ -84,6 +86,7 @@ Page.propTypes = {
   thumbnail: PropTypes.object,
   content: PropTypes.string.isRequired,
   gallery: PropTypes.array,
+  isResumePage: PropTypes.bool,
   link: PropTypes.string,
   tech: PropTypes.arrayOf(
     PropTypes.shape({
