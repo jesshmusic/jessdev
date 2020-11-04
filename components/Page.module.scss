@@ -1,4 +1,4 @@
-@import '../../styles/base';
+@import '../styles/base';
 
 .pageTitle,
 .contentRow,
@@ -19,11 +19,15 @@
   @include media-breakpoint-up(md) {
     @include mb(0);
     @include pr(6);
+
+    max-width: 60vh;
   }
 }
 
 .mainContent {
-  display: flex;
+  @include media-breakpoint-up(md) {
+    display: flex;
+  }
 }
 
 .cardGrid {

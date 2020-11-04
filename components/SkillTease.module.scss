@@ -1,0 +1,26 @@
+@import '../styles/base';
+
+.skillTease {
+  @include mb(3);
+  @include responsive-padding-x;
+
+  display: flex;
+
+  h3 {
+    @include mb(0);
+    @include ml(2);
+
+    width: 100%;
+
+    small {
+      @include ml(3);
+
+      font-size: 70%;
+      text-transform: uppercase;
+    }
+  }
+
+  img {
+    width: 1.5rem;
+  }
+}
