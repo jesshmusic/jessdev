@@ -7,11 +7,27 @@
 @import './mixins';
 
 %section-margins {
-  @include margin(0, 0, 3, 0);
+  @include margin(0, 0, 4, 0);
   @include media-breakpoint-up(md) {
-    @include margin(0, 0, 4, 0);
+    @include margin(0, 0, 5, 0);
   }
   @include media-breakpoint-up(lg) {
-    @include margin(0, 0, 5, 0);
+    @include margin(0, 0, 6, 0);
+  }
+}
+
+%card-grid {
+  display: grid;
+  grid-auto-rows: 16rem;
+  grid-gap: bsize(2);
+  grid-template-columns: 1fr;
+
+  @include media-breakpoint-up(md) {
+    grid-auto-rows: 8rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @include media-breakpoint-up(xl) {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }

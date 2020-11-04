@@ -1,15 +1,18 @@
 @import '../../styles/base';
 
-.pageTitle {
-  @include mt(0);
-}
-
-.contentRow {
+.pageTitle,
+.contentRow,
+.content,
+.gallery,
+.linkRow,
+.mainContent,
+.cardGrid {
+  @extend %section-margins;
+  @include responsive-padding-x;
 }
 
 .content {
-  @include font-size($font-size-lg);
-  @include mb(6);
+  @include font-size($font-size-base);
 
   flex: 2;
 
@@ -19,12 +22,12 @@
   }
 }
 
-.gallery {
-  @include mb(3);
+.mainContent {
+  display: flex;
+}
 
-  h2 {
-
-  }
+.cardGrid {
+  @extend %card-grid;
 }
 
 .githubLink {
@@ -40,7 +43,6 @@
 }
 
 .linkRow {
-  @include mt(6);
 
   display: flex;
   justify-content: center;
@@ -63,9 +65,19 @@
 }
 
 .thumbnail {
-  flex: 1;
+  @include media-breakpoint-up(md) {
+    background-color: $white;
+    border-bottom-right-radius: $border-radius-lg;
+    box-shadow: $box-shadow;
+    flex: 1;
+    overflow: hidden;
+  }
 
   img {
     @include img-fluid;
   }
+}
+
+.heading {
+  @include font-size($h4-font-size);
 }

@@ -8,12 +8,12 @@
   transition: box-shadow 350ms ease-in-out;
   z-index: 1;
 
-  &:hover {
-    box-shadow: $box-shadow-hover;
-  }
-
   @include media-breakpoint-up(md) {
     border-bottom-right-radius: $border-radius-lg;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow-hover;
   }
 }
 
@@ -69,6 +69,7 @@
     bottom: 0;
     display: flex;
     height: 0;
+    left: 0;
     margin: 0;
     opacity: 0;
     padding: 1rem 2rem;
@@ -94,11 +95,9 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  //border: solid 0.5rem $primary;
   height: 8rem;
 
   @include media-breakpoint-up(md) {
-    //border-radius: 100%;
     margin: 0 auto;
     position: absolute;
     width: 8rem;

@@ -16,7 +16,8 @@
 }
 
 .backToHome {
-  //@include section-header;
+  @extend %section-margins;
+  @include responsive-padding-x;
 
   a {
     color: $primary-dark;
