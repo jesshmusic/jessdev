@@ -18,7 +18,7 @@ export default function Home ({ homeData }) {
   })
 
   return (
-    <Layout home>
+    <div>
       <section className={styles.section}>
         <ReactMarkdown source={homeData.description} className={styles.text} />
       </section>
@@ -67,7 +67,7 @@ export default function Home ({ homeData }) {
         </div>
         <ContactForm />
       </section>
-    </Layout>
+    </div>
   )
 }
 Home.propTypes = {

@@ -7,7 +7,6 @@ export default function Resume ({ postData }) {
     url: './images/LogoSmall.svg',
     alt: 'Logo'
   }
-  console.log(postData)
   return (
     <Page content={postData.summary}
       isResumePage
@@ -23,7 +22,6 @@ Resume.propTypes = {
 
 export async function getStaticProps () {
   const postData = await getResumeData()
-  console.log(postData)
   return {
     props: {
       postData

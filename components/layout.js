@@ -3,14 +3,18 @@ import styles from './layout.module.scss'
 import Link from 'next/link'
 import { useEffect } from 'react'
 import { titleAnimateIn } from '../lib/animations'
-import { PropTypes } from 'prop-types'
 import Footer from './Footer'
+import Transition from './Transition'
 import Header from './Header'
+import { useRouter } from 'next/router'
+import { PropTypes } from 'prop-types'
 
 export default function Layout ({ children, home }) {
+  const router = useRouter()
+
   useEffect(() => {
     titleAnimateIn('#siteHeadingText')
-  })
+  }, [])
 
   return (
     <div className={styles.wrapper}>
@@ -36,18 +40,29 @@ export default function Layout ({ children, home }) {
         <link rel="manifest" href="/site.webmanifest"/>
       </Head>
       <Header home={home} />
-      <main className={styles.mainContent}>
-        <div className={styles.container}>
-          {children}
-          {!home && (
-            <div className={styles.backToHome}>
-              <Link href="/">
-                <a>← Back to home</a>
-              </Link>
-            </div>
-          )}
-        </div>
-      </main>
+      <div className="overlay-navigation">
+        <nav role="navigation">
+          <ul>
+            <li><Link href="/"><a data-content="Projects, Clients, Tech">Home</a></Link></li>
+            <li><Link href="/about"><a data-content="Who am I?">About</a></Link></li>
+            <li><Link href="/resume"><a data-content="The brass tacks">Resumé</a></Link></li>
+          </ul>
+        </nav>
+      </div>
+      <Transition location={router.pathname}>
+        <main className={styles.mainContent}>
+          <div className={styles.container}>
+            {children}
+            {!home && (
+              <div className={styles.backToHome}>
+                <Link href="/">
+                  <a>← Back to home</a>
+                </Link>
+              </div>
+            )}
+          </div>
+        </main>
+      </Transition>
       <Footer />
     </div>
   )

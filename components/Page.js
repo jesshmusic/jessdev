@@ -2,13 +2,12 @@ import styles from './Page.module.scss'
 import ReactMarkdown from 'react-markdown'
 import TechTease from './TechTease'
 import { Carousel } from 'react-responsive-carousel'
-import Layout from './layout'
 import { PropTypes } from 'prop-types'
 import { SkillTease } from './SkillTease'
 import { WorkTease } from './WorkTease'
 
 const Page = (props) => (
-  <Layout>
+  <div>
     <h1 className={`${styles.pageTitle} page-title`}>{ props.title }</h1>
     <article className={styles.mainContent}>
       <div className={styles.content}>
@@ -78,7 +77,7 @@ const Page = (props) => (
         </div>
       </section>
     ) : null}
-  </Layout>
+  </div>
 )
 
 Page.propTypes = {
