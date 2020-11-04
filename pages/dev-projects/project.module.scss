@@ -30,6 +30,11 @@
   @extend %card-grid;
 }
 
+.gallery {
+  @include mx(auto);
+  max-width: 50vh;
+}
+
 .githubLink {
   align-self: center;
   color: $primary-dark;

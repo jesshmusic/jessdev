@@ -46,7 +46,7 @@ export default function Post ({ postData }) {
       {postData.gallery && postData.gallery.length > 0 ? (
         <div className={styles.gallery}>
           <h3 className={styles.heading}>Screenshots</h3>
-          <Carousel autoPlay={true} width={'50vh'}>
+          <Carousel autoPlay={true}>
             {postData.gallery.map(image => (
               <div key={image.id}>
                 <img src={image.formats ? image.formats.large.url : image.url} alt={image.alt}/>
