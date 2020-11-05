@@ -8,7 +8,7 @@ export default function Resume ({ postData }) {
     url: './images/LogoSmall.svg',
     alt: 'Logo'
   }
-  console.log(postData)
+
   return (
     <Page content={postData.summary}
       isResumePage

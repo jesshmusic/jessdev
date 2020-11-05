@@ -11,7 +11,7 @@ export const SkillTease = (props) => (
 SkillTease.propTypes = {
   logo: PropTypes.shape({
     url: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
+    alt: PropTypes.string
   }),
   title: PropTypes.string.isRequired,
   yearsOfExperience: PropTypes.string.isRequired
