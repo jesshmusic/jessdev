@@ -7,6 +7,7 @@ import { SkillTease } from './SkillTease'
 import { WorkTease } from './WorkTease'
 import { useEffect } from 'react'
 import { headingsAnimateIn } from '../lib/animations'
+import { EducationTease } from './EducationTease'
 
 const Page = (props) => {
   useEffect(() => {
@@ -15,7 +16,7 @@ const Page = (props) => {
 
   return (
     <div>
-      <h1 className={ `${ styles.pageTitle } page-title` }>{ props.title }</h1>
+      <h1 className={ `${styles.pageTitle} page-title` }>{ props.title }</h1>
       <article className={ styles.mainContent }>
         <div className={ styles.content }>
           <ReactMarkdown source={ props.content }/>
@@ -28,59 +29,69 @@ const Page = (props) => {
       </article>
       { props.tech && props.tech.length > 0 ? (
         <section id={ 'techSection' }>
-          <h3 className={ `${ styles.heading } page-heading` }>Technology</h3>
+          <h3 className={ `${styles.heading} page-heading` }>Technology</h3>
           <div className={ styles.cardGrid }>
-            { props.tech.map( ( tech ) => {
+            { props.tech.map((tech) => {
               return <TechTease
                 logo={ tech.icon }
                 title={ tech.title }
                 description={ tech.description }
                 key={ tech.id }
                 scrollTrigger={ '#techSection' }/>
-            } ) }
+            }) }
           </div>
         </section>
       ) : null }
       { props.buttonText && props.link ? (
         <div className={ styles.linkRow }>
           <a href={ props.link }
-             className={ styles.githubLink }
-             rel={ 'noreferrer noopener' }
-             target={ '_blank' }>
+            className={ styles.githubLink }
+            rel={ 'noreferrer noopener' }
+            target={ '_blank' }>
             { props.buttonText }
           </a>
-        </div> ) : null }
+        </div>) : null }
       { props.gallery && props.gallery.length > 0 ? (
         <section id={ 'gallerySection' }>
-          <h3 className={ `${ styles.heading } page-heading` }>Screenshots</h3>
+          <h3 className={ `${styles.heading} page-heading` }>Screenshots</h3>
           <div className={ styles.gallery }>
             <Carousel autoPlay={ true }>
-              { props.gallery.map( image => (
+              { props.gallery.map(image => (
                 <div key={ image.id }>
                   <img src={ image.formats ? image.formats.large.url : image.url } alt={ image.alt }/>
                 </div>
-              ) ) }
+              )) }
             </Carousel>
           </div>
         </section>
       ) : null }
       { props.work && props.work.length > 0 ? (
         <section id={ 'workSection' }>
-          <h3 className={ `${ styles.heading } page-heading` }>Experience</h3>
+          <h3 className={ `${styles.heading} page-heading` }>Experience</h3>
           <div className={ styles.contentRow }>
-            { props.work.map( ( work ) => {
-              return <WorkTease { ...work } key={ `work${ work.id }` }/>
-            } ) }
+            { props.work.map((work) => {
+              return <WorkTease { ...work } key={ `work${work.id}` }/>
+            }) }
           </div>
         </section>
       ) : null }
       { props.skills && props.skills.length > 0 ? (
         <section id={ 'workSection' }>
-          <h3 className={ `${ styles.heading } page-heading` }>Skills</h3>
+          <h3 className={ `${styles.heading} page-heading` }>Skills</h3>
           <div className={ styles.contentRow }>
-            { props.skills.map( ( skill ) => {
-              return <SkillTease { ...skill } key={ `skills${ skill.id }` }/>
-            } ) }
+            { props.skills.map((skill) => {
+              return <SkillTease { ...skill } key={ `skills${skill.id}` }/>
+            }) }
+          </div>
+        </section>
+      ) : null }
+      { props.education && props.education.length > 0 ? (
+        <section id={ 'workSection' }>
+          <h3 className={ `${styles.heading} page-heading` }>Education</h3>
+          <div className={ styles.contentRow }>
+            { props.education.map((degree) => {
+              return <EducationTease { ...degree } key={ `education${degree.id}` }/>
+            }) }
           </div>
         </section>
       ) : null }
@@ -105,7 +116,8 @@ Page.propTypes = {
   ),
   skills: PropTypes.array,
   title: PropTypes.string.isRequired,
-  work: PropTypes.array
+  work: PropTypes.array,
+  education: PropTypes.array
 }
 
 export default Page

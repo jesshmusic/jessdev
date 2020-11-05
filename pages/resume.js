@@ -1,19 +1,22 @@
 import { getResumeData } from '../lib/posts'
 import { PropTypes } from 'prop-types'
 import Page from '../components/Page'
+import { education } from '../lib/static-data'
 
 export default function Resume ({ postData }) {
   const thumbnail = {
     url: './images/LogoSmall.svg',
     alt: 'Logo'
   }
+  console.log(postData)
   return (
     <Page content={postData.summary}
       isResumePage
       title={postData.title}
       thumbnail={thumbnail}
       skills={postData.tech}
-      work={postData.work}/>
+      work={postData.work}
+      education={education}/>
   )
 }
 Resume.propTypes = {

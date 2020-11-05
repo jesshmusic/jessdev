@@ -1,0 +1,27 @@
+@import '../styles/base';
+
+.workTease {
+  @extend %section-margins;
+  @include responsive-padding-x;
+
+  h3 {
+    @include m(0);
+
+    width: 100%;
+
+    small {
+      @include ml(4);
+
+      font-size: 70%;
+      text-transform: uppercase;
+    }
+  }
+
+  h4 {
+    @include mb(3);
+    @include font-size($h5-font-size);
+
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+  }
+}
