@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import styles from './layout.module.scss'
 import Link from 'next/link'
-import { useEffect } from 'react'
-import { titleAnimateIn } from '../lib/animations'
+import { useEffect, useState } from 'react'
+import { titleAnimateIn, toggleNav } from '../lib/animations'
 import Footer from './Footer'
 import Transition from './Transition'
 import Header from './Header'
@@ -11,11 +11,17 @@ import { PropTypes } from 'prop-types'
 import Navigation from './Navigation'
 
 export default function Layout ({ children, home }) {
+  const [showNav, setShowNav] = useState(false)
   const router = useRouter()
 
   useEffect(() => {
     titleAnimateIn('#siteHeadingText')
   }, [])
+
+  const onNavClick = () => {
+    setShowNav(!showNav)
+    toggleNav(showNav)
+  }
 
   return (
     <div className={ styles.wrapper }>
@@ -43,8 +49,8 @@ export default function Layout ({ children, home }) {
         <script src="https://kit.fontawesome.com/90b73f7468.js" crossOrigin="anonymous"/>
         <link rel="manifest" href="/site.webmanifest"/>
       </Head>
-      <Header home={ home }/>
-      <Navigation/>
+      <Header home={ home } toggleNav={onNavClick}/>
+      <Navigation toggleNav={onNavClick}/>
       <Transition location={ router.pathname }>
         <main className={ styles.mainContent }>
           <div className={ styles.container }>

@@ -5,7 +5,7 @@
   @include responsive-padding;
 
   background-color: rgba($c-indigo, 0.5);
-  background-position: calc(100% - 50px) center;
+  background-position: calc(100% - 100px) center;
   background-repeat: no-repeat;
   position: relative;
 
@@ -19,34 +19,37 @@
 }
 
 .openOverlay {
+  @include p(2);
   background: none;
   border: 0;
   cursor: pointer;
   display: block;
-  padding: 0;
   position: absolute;
-  right: 15rem;
-  top: 4.5rem;
-  width: 34px;
+  right: 2rem;
+  top: 0.75rem;
+  width: 4rem;
   z-index: 100;
 
+  @include media-breakpoint-up(md) {
+    top: 1.5rem;
+  }
+
+  @include media-breakpoint-up(lg) {
+    top: 4.5rem;
+  }
+
   span {
-    background-color: #fff;
+    background-color: $white;
     cursor: pointer;
     display: block;
     height: 1px;
     margin-top: 8px;
+    transition: background-color 350ms ease-in-out;
   }
-}
 
-.barTop {
-
-}
-
-.barMiddle {
-
-}
-
-.barBottom {
-
+  &:hover {
+    span {
+      background-color: $c-tan;
+    }
+  }
 }
