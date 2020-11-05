@@ -1,7 +1,7 @@
 @import '../styles/base';
 
 .card {
-  box-shadow: 0;
+  box-shadow: none;
   opacity: 0.75;
   overflow: hidden;
   transform: scale(1);
@@ -46,12 +46,19 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: center;
+  justify-content: flex-start;
 
   h3,
   h4 {
     margin: 0;
   }
+}
+
+.cardType {
+  @include my(3);
+
+  font-weight: $font-weight-bolder;
+  text-transform: uppercase;
 }
 
 .content {

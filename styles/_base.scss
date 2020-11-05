@@ -17,9 +17,10 @@
 }
 
 %card-grid {
+  @include mb(6);
+
   display: grid;
-  grid-auto-rows: 16rem;
-  //grid-gap: bsize(2);
+  grid-auto-rows: auto;
   grid-row-gap: bsize(1);
   grid-template-columns: 1fr;
 

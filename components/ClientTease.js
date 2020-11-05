@@ -7,6 +7,7 @@ const ClientTease = ({ name, subtitle, description, logo, siteLink }) => (
     image={logo}
     subtitle={subtitle}
     siteLink={siteLink}
+    cardType={'Client'}
     className={'client-card'} />
 )
 

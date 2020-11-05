@@ -1,10 +1,12 @@
 import CardComponent from './CardComponent'
 import { PropTypes } from 'prop-types'
 
-const TechTease = ({ title, description, logo }) => (
+const TechTease = ({ title, subtitle, description, logo }) => (
   <CardComponent title={title}
     description={description}
     image={logo}
+    cardType={'Tech'}
+    subtitle={subtitle}
     className={'tech-card'} />
 )
 

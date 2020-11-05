@@ -53,9 +53,9 @@ const Page = (props) => {
         </div>) : null }
       { props.gallery && props.gallery.length > 0 ? (
         <section id={ 'gallerySection' }>
-          <h3 className={ `${styles.heading} page-heading` }>Screenshots</h3>
+          <h3 className={ `${styles.heading} page-heading` }>Gallery</h3>
           <div className={ styles.gallery }>
-            <Carousel autoPlay={ true }>
+            <Carousel autoPlay={ true } dynamicHeight={true}>
               { props.gallery.map(image => (
                 <div key={ image.id }>
                   <img src={ image.formats ? image.formats.large.url : image.url } alt={ image.alt }/>
