@@ -4,6 +4,7 @@
   @include mb(3);
   @include responsive-padding-x;
 
+  align-items: center;
   display: flex;
 
   h3 {
@@ -21,6 +22,7 @@
   }
 
   img {
+    height: 1.5rem;
     width: 1.5rem;
   }
 }
