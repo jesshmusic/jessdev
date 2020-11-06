@@ -19,7 +19,9 @@
     "react"
   ],
   "rules": {
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "indent": ["error", 2, { "ignoredNodes": ["JSXElement *", "JSXElement"]}],
+    "react/jsx-indent-props": [2, "first"]
   },
   "globals": {
     "React": "writable"

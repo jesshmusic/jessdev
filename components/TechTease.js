@@ -3,17 +3,18 @@ import { PropTypes } from 'prop-types'
 
 const TechTease = ({ title, subtitle, description, logo }) => (
   <CardComponent title={title}
-    description={description}
-    image={logo}
-    cardType={'Tech'}
-    subtitle={subtitle}
-    className={'tech-card'} />
+                 description={description}
+                 image={logo}
+                 cardType={'Tech'}
+                 subtitle={subtitle}
+                 className={'tech-card'} />
 )
 
 TechTease.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  logo: PropTypes.object.isRequired
+  logo: PropTypes.object.isRequired,
+  subtitle: PropTypes.string
 }
 
 export default TechTease

@@ -11,12 +11,12 @@ export default function Resume ({ postData }) {
 
   return (
     <Page content={postData.summary}
-      isResumePage
-      title={postData.title}
-      thumbnail={thumbnail}
-      skills={postData.tech}
-      work={postData.work}
-      education={education}/>
+          isResumePage
+          title={postData.title}
+          thumbnail={thumbnail}
+          skills={postData.tech}
+          work={postData.work}
+          education={education}/>
   )
 }
 Resume.propTypes = {

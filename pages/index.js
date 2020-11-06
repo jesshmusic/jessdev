@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import Layout from '../components/layout'
 import styles from '../styles/utils.module.scss'
 import { getHomeData } from '../lib/posts'
 import ReactMarkdown from 'react-markdown'

@@ -49,11 +49,13 @@ export default function Layout ({ children, home }) {
         <script src="https://kit.fontawesome.com/90b73f7468.js" crossOrigin="anonymous"/>
         <link rel="manifest" href="/site.webmanifest"/>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-SR4LCCLC0Y"/>
-        <script dangerouslySetInnerHTML={{__html: `window.dataLayer = window.dataLayer || [];
+        <script dangerouslySetInnerHTML={{
+__html: `window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-SR4LCCLC0Y');`}} />
+  gtag('config', 'G-SR4LCCLC0Y');`
+}} />
       </Head>
       <Header home={ home } toggleNav={onNavClick}/>
       <Navigation toggleNav={onNavClick}/>

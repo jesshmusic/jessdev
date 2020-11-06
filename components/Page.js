@@ -45,9 +45,9 @@ const Page = (props) => {
       { props.buttonText && props.link ? (
         <div className={ styles.linkRow }>
           <a href={ props.link }
-            className={ styles.githubLink }
-            rel={ 'noreferrer noopener' }
-            target={ '_blank' }>
+             className={ styles.githubLink }
+             rel={ 'noreferrer noopener' }
+             target={ '_blank' }>
             { props.buttonText }
           </a>
         </div>) : null }

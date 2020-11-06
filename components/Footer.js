@@ -13,24 +13,24 @@ const Footer = () => (
     <div className={styles.column}>
       <h4>Links</h4>
       <a href='https://www.linkedin.com/in/jesshendricks'
-        className={styles.socialLink}
-        target={'_blank'}
-        rel={'noreferrer'}
-        title={'LinkedIn'}>
+         className={styles.socialLink}
+         target={'_blank'}
+         rel={'noreferrer'}
+         title={'LinkedIn'}>
         <i aria-hidden className="fab fa-linkedin"/> LinkedIn Profile
       </a>
       <a href='https://existentialmusic.com/'
-        className={styles.socialLink}
-        target={'_blank'}
-        rel={'noreferrer'}
-        title={'Personal Blog'}>
+         className={styles.socialLink}
+         target={'_blank'}
+         rel={'noreferrer'}
+         title={'Personal Blog'}>
         <i aria-hidden className="fas fa-rss"/> Personal Blog
       </a>
       <a href='https://jesshendricks.com/'
-        className={styles.socialLink}
-        target={'_blank'}
-        rel={'noreferrer'}
-        title={'Film Music Portfolio'}>
+         className={styles.socialLink}
+         target={'_blank'}
+         rel={'noreferrer'}
+         title={'Film Music Portfolio'}>
         <i aria-hidden className="fas fa-icons"/> Film Music Portfolio
       </a>
     </div>
